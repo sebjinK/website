@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sebjin</title>
   <link rel="stylesheet" href="style.css">
-  <base href="/website/">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preload" as="image" href={treeProfilePic}>
+  <!-- <base href="/website/"> -->
 </head>
 <body>
   <div class="titlename">sebjin // made</div>
@@ -18,8 +20,8 @@
       </div>
     </section>
 
-    <div class="abouttitle">about</div>
-      <div class="aboutpara">
+    <div id="abouttitle" class="link-btn" role="button" tabindex="0" aria-expanded="false" aria-controls="aboutpara">about</div>
+      <div id="aboutpara" class="aboutpara">
         <p>I'm a Tennessee Tech Undergraduate (about to graduate in DECEMBER 2025)
           I've been working as a Computer Science major with a concentration in Cybersecurity for a while now
           and I've been trying to understand more about how the world interacts with my professional interests
@@ -45,9 +47,6 @@
 
 
   </main>
-  <script>
-    // auto-update year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="back.js"></script>
 </body>
 </html>
