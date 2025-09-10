@@ -22,12 +22,21 @@ main {
 }
 
 .titlename {
-    display: block;                 /* not inline-block */
-    max-width: 800px;               /* match main */
-    margin: 0 auto;                 /* center the block */
-    padding: 2rem 1rem;
-    padding-bottom: 3rem;
+    display: inline-block;                 /* not inline-block */
+    max-width: 200px;               /* match main */
+    margin: 2rem auto;                 /* center the block */
+    padding: 1rem;
+    /* padding-bottom: 3rem; */
     font-size: 3rem;
+    font-family: 'Golos Text', sans-serif; /* custom font */
+    /* line-height: 1.2 ;             tighten line height */
+    word-break: break-word;
+    
+    background-color: #fff;         /* white background */
+    color: #000;                    /* make text readable on white */
+    text-align: center;             /* center title text */
+    border-radius: 20px;          /* optional: rounded edges */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional: subtle shadow */
 }
 
 h2 {
@@ -100,9 +109,9 @@ footer {
 
 .link-title-btn {
   display: inline-block;
-  padding: 2rem 1rem;
+  /* padding: 0; */
   text-decoration: none;
-  color: var(--text, #e7e9ee);
+  color: var(--text, #000207);
   font-size: 3rem;
   transition: all 0.2s ease;
 }
@@ -112,6 +121,7 @@ footer {
   border-color: var(--accent, #02ac9e);
   color: var(--accent, #02ac9e);
   transform: translateY(-2px);
+  
 }
 .abouttitle {
     display: inline-block;
@@ -124,6 +134,15 @@ footer {
 .aboutpara {
     padding-left: 1rem;
 }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
 
 @media (min-width: 900px){
     main {

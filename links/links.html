@@ -8,15 +8,42 @@
 </head>
 <body>
     <div class="titlename">
-            <a class="link-title-btn" href="/index.html">Sebjin // Made</a> // links
+        <a class="link-title-btn" href="/">sebjin // made</a> // links
     </div>
     <main>
-        <p><a class="link-btn" href="mailto:sebjinkennedy@example.com">email: sebjinkennedy@gmail.com</a></p>
+        <p>
+        <!-- Email -->
+          <a class="link-btn"
+            href="#"
+            data-copy="sebjinkennedy@gmail.com"
+            data-copy-feedback="#emailStatus"
+            title="Click to copy email">
+            email: sebjinkennedy@gmail.com
+          </a>
+          <span id="emailStatus" class="sr-only" aria-live="polite"></span>
+        </p>
+
+        <p>
+        <!-- Phone (show pretty, copy E.164/raw) -->
+          <a class="link-btn"
+            href="#"
+            data-copy="+16158216748"
+            data-copy-feedback="#phoneStatus"
+            title="Click to copy phone">
+            phone: +1 (615) 821-6748
+          </a>
+          <span id="phoneStatus" class="sr-only" aria-live="polite"></span>
+        </p>
+
+
         <p><a class="link-btn" href="https://github.com/sebjink" target="_blank" rel="noopener">github</a></p>
         <!-- add more as needed by duplicating the pattern: -->
-        <!-- <p><a class="link-btn" href="https://www.linkedin.com/in/sebjinkennedy/" target="_blank" rel="noopener">linkedin</a></p> -->
-        <!-- <p><a class="link-btn" href="https://scholar.google.com/..." target="_blank" rel="noopener">google scholar</a></p> -->
+        <p><a class="link-btn" href="https://www.linkedin.com/in/sebjinkennedy/" target="_blank" rel="noopener">linkedin</a></p>
+
+        <!-- <p><a class="link-btn" href="https://scholar.google.com/..." target="_blank" rel="noopener">google scholar</a></p>
         <!-- <p><a class="link-btn" href="https://devpost.com/..." target="_blank" rel="noopener">devpost</a></p> -->
     </main>
+    <script src="/back.js"></script>
+    <script src="/links/copy.js"></script>
 </body>
 </html>
