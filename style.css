@@ -9,8 +9,8 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-  background: #230424;
-  color: #e7e9ee;
+  background: #9e3c3c;
+  color: #ede7ee;
 }
 
 main {
@@ -21,52 +21,25 @@ main {
   padding: 0 1rem;            /* gutter */
 }
 
-.titlename {
-    display: inline-block;                 /* not inline-block */
-    max-width: 200px;               /* match main */
-    margin: 2rem auto;                 /* center the block */
-    padding: 1rem;
-    /* padding-bottom: 3rem; */
-    font-size: 3rem;
-    font-family: 'Golos Text', sans-serif; /* custom font */
-    /* line-height: 1.2 ;             tighten line height */
-    word-break: break-word;
-    
-    background-color: #fff;         /* white background */
-    color: #000;                    /* make text readable on white */
-    text-align: center;             /* center title text */
-    border-radius: 20px;          /* optional: rounded edges */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional: subtle shadow */
-}
 
-h2 {
-  margin-top: 2rem;
-  border-bottom: 1px solid #22252b;
-  padding-bottom: 0.5rem;
-}
-
-a {
-  color: #7aa2ff;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  border-top: 1px solid #22252b;
-  color: #a8acb6;
-  margin-top: 2rem;
-}
 
 .highlight {
-  display: inline;
-  font-style: italic;
-  font-weight: 600;
-  white-space: nowrap; /* keep phrase together */
-  background-size: 200% auto; /* allows animation movement */
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent; /* text shows only gradient */
+    display: inline;
+    font-style: italic;
+    font-weight: 600;
+    white-space: nowrap; /* keep phrase together */
+    background-size: 200% auto; /* allows animation movement */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; /* text shows only gradient */
+    animation: shine 4s linear infinite;
 }
+
+@keyframes shine {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
 
 /* Pretentious color blends */
 .ambassador {
@@ -91,48 +64,104 @@ footer {
   );
 }
 
+
+/* link buttons */ 
 .link-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: sans-serif;
+  /* font-weight: bold; */
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: var(--text, #e7e9ee);
+  color: var(--text, #ffffff);
   font-size: 2rem;
-  transition: all 0.2s ease;
+  transition: background-color 500ms, color 500ms, box-shadow 500ms, border 500ms;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  vertical-align: middle;
 }
 
 /* Hover effect for normal buttons */
 .link-btn:hover {
-  border-color: var(--accent, #02ac9e);
-  color: var(--accent, #02ac9e);
-  transform: translateY(-2px);
+  background-color: #9b2a2a;
+  border: 2px solid rgb(145, 86, 86);
+  border-radius: 4px;
 }
 
-.link-title-btn {
+.titlename {
+    display: inline-block;                 /* not inline-block */
+    max-width: 200px;               /* match main */
+    margin: 2rem auto;                 /* center the block */
+    padding: 1rem;
+    /* padding-bottom: 3rem; */
+    font-size: 3rem;
+    font-family: 'Golos Text', sans-serif; /* custom font */
+    /* line-height: 1.2 ;             tighten line height */
+    word-break: break-word;
+    
+    background-color: #fff;         /* white background */
+    color: #000;                    /* make text readable on white */
+    text-align: center;             /* center title text */
+    border-radius: 20px;          /* optional: rounded edges */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional: subtle shadow */
+}
+
+/* .link-title-btn {
   display: inline-block;
-  /* padding: 0; */
   text-decoration: none;
   color: var(--text, #000207);
   font-size: 3rem;
   transition: all 0.2s ease;
 }
 
-/* Hover effect for normal buttons */
 .link-title-btn:hover {
   border-color: var(--accent, #02ac9e);
   color: var(--accent, #02ac9e);
   transform: translateY(-2px);
-  
+} */
+
+/* ABOUT SEC */
+/* Remove default disclosure triangle */
+/* Remove default triangle */
+/* remove default triangle */
+summary::-webkit-details-marker { display: none; }
+summary::marker { content: ''; }
+
+/* keep your link-btn look + avoid layout jump on hover */
+summary.link-btn {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border: 3px solid transparent;
 }
-.abouttitle {
-    display: inline-block;
-    padding-left: 1rem;
-    padding-top: 2rem;
-    padding-bottom: .5rem;
-    font-size: 2rem;
+summary.link-btn:hover {
+  background-color: #9b2a2a;
+  border-color: rgb(145, 86, 86);
+  border-radius: 7px;
 }
 
+/* animated wrapper */
+.about-anim {
+  overflow: hidden;
+  max-height: 0;                 /* collapsed height */
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    max-height 350ms ease,
+    opacity 250ms ease,
+    transform 350ms ease;
+}
+
+/* visual of the inner panel */
 .aboutpara {
-    padding-left: 1rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: rgb(155, 42, 42);
+  border-radius: 7px;
 }
 
 .sr-only {
@@ -142,6 +171,144 @@ footer {
   overflow: hidden; clip: rect(0,0,0,0);
   white-space: nowrap; border: 0;
 }
+
+
+/* (optional) respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-anim { transition: none; }
+}
+
+
+
+/*
+GITHUB BUTTON STUFF
+*/
+    .GithubButton {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 15px 25px;
+        /* background-color: white; */
+        /* border: 2px solid #24292e; */
+        border-radius: 4px;
+        font-size: x-large;
+        color: #24292e;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 500ms, color 500ms, box-shadow 500ms;
+        margin: 12px   
+    }
+    .GithubButton:hover {
+        /* background-color: rgb(180, 178, 178); */
+        /* opacity: .7; */
+        background-color: #24292e;
+        color: white;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+    }
+    .GithubProfileWrapper {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .GithubProfileWrapper .pic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        transition: opacity 500ms ease-in-out;
+    }
+
+    .GithubProfileWrapper .base {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .GithubProfileWrapper .hover {
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .GithubButton:hover .GithubProfileWrapper .base {
+        opacity: 0; 
+    }
+
+    .GithubButton:hover .GithubProfileWrapper .hover {
+        opacity: 1;
+    }
+
+    .GithubButton:active {
+        opacity: .7;
+    }
+    /*GITHUB BUTTON STUFF*/
+
+    /*Linkedin button stuff*/
+    .LinkedinButton {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 15px 25px;
+        /* background-color: white;
+        border: 1px solid rgb(0, 114, 177); */
+        border-radius: 4px;
+        font-size: x-large;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 500ms, color 500ms, box-shadow 500ms;
+        margin: 12px;
+    }
+    .LinkedinButton:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 114, 177);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+    }
+
+    .LinkedinProfileWrapper {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .LinkedinProfileWrapper .pic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2rem;
+        height: 2rem;
+        transition: opacity 500ms ease-in-out;
+    }
+
+    .LinkedinProfileWrapper .base {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .LinkedinProfileWrapper .hover {
+        opacity: 0;
+        z-index: 2;
+    }
+
+    .LinkedinButton:hover .LinkedinProfileWrapper .base {
+        opacity: 0
+    }
+
+    .LinkedinButton:hover .LinkedinProfileWrapper .hover {
+        opacity: 1;
+    }
+
+    .LinkedinButton:active {
+        opacity: .7;
+    }
+
+
+
+    /*Linkedin button stuff*/
 
 
 @media (min-width: 900px){
