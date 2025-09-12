@@ -21,41 +21,7 @@ main {
   padding: 0 1rem;            /* gutter */
 }
 
-.titlename {
-    display: inline-block;                 /* not inline-block */
-    max-width: 200px;               /* match main */
-    margin: 2rem auto;                 /* center the block */
-    padding: 1rem;
-    /* padding-bottom: 3rem; */
-    font-size: 3rem;
-    font-family: 'Golos Text', sans-serif; /* custom font */
-    /* line-height: 1.2 ;             tighten line height */
-    word-break: break-word;
-    
-    background-color: #fff;         /* white background */
-    color: #000;                    /* make text readable on white */
-    text-align: center;             /* center title text */
-    border-radius: 20px;          /* optional: rounded edges */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional: subtle shadow */
-}
 
-h2 {
-  margin-top: 2rem;
-  border-bottom: 1px solid #22252b;
-  padding-bottom: 0.5rem;
-}
-
-a {
-  color: #7aa2ff;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  border-top: 1px solid #22252b;
-  color: #a8acb6;
-  margin-top: 2rem;
-}
 
 .highlight {
     display: inline;
@@ -111,31 +77,50 @@ footer {
   text-decoration: none;
   color: var(--text, #ffffff);
   font-size: 2rem;
-  transition: background-color 500ms, color 500ms, box-shadow 500ms;
+  transition: background-color 500ms, color 500ms, box-shadow 500ms, border 500ms;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  vertical-align: middle;
 }
 
 /* Hover effect for normal buttons */
 .link-btn:hover {
   background-color: #9b2a2a;
-  border: 3px solid rgb(145, 86, 86);
-  border-radius: 7px;
+  border: 2px solid rgb(145, 86, 86);
+  border-radius: 4px;
 }
 
-.link-title-btn {
+.titlename {
+    display: inline-block;                 /* not inline-block */
+    max-width: 200px;               /* match main */
+    margin: 2rem auto;                 /* center the block */
+    padding: 1rem;
+    /* padding-bottom: 3rem; */
+    font-size: 3rem;
+    font-family: 'Golos Text', sans-serif; /* custom font */
+    /* line-height: 1.2 ;             tighten line height */
+    word-break: break-word;
+    
+    background-color: #fff;         /* white background */
+    color: #000;                    /* make text readable on white */
+    text-align: center;             /* center title text */
+    border-radius: 20px;          /* optional: rounded edges */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional: subtle shadow */
+}
+
+/* .link-title-btn {
   display: inline-block;
-  /* padding: 0; */
   text-decoration: none;
   color: var(--text, #000207);
   font-size: 3rem;
   transition: all 0.2s ease;
 }
 
-/* Hover effect for normal buttons */
 .link-title-btn:hover {
   border-color: var(--accent, #02ac9e);
   color: var(--accent, #02ac9e);
   transform: translateY(-2px);
-}
+} */
 
 /* ABOUT SEC */
 .abouttitle {
@@ -178,8 +163,8 @@ GITHUB BUTTON STUFF
         align-items: center;
         gap: 6px;
         padding: 15px 25px;
-        background-color: white;
-        border: 1px solid black;
+        /* background-color: white; */
+        /* border: 1px solid black; */
         border-radius: 4px;
         font-size: x-large;
         color: rgb(0, 2, 1);
@@ -199,16 +184,16 @@ GITHUB BUTTON STUFF
     }
     .GithubProfileWrapper {
         position: relative;
-        width: 25px;
-        height: 25px;
+        width: 2rem;
+        height: 2rem;
     }
 
     .GithubProfileWrapper .pic {
         position: absolute;
         top: 0;
         left: 0;
-        width: 24px;
-        height: 24px;
+        width: 2rem;
+        height: 2rem;
         transition: opacity 500ms ease-in-out;
     }
 
@@ -241,11 +226,11 @@ GITHUB BUTTON STUFF
         align-items: center;
         gap: 6px;
         padding: 15px 25px;
-        background-color: white;
-        border: 1px solid rgb(0, 114, 177);
+        /* background-color: white;
+        border: 1px solid rgb(0, 114, 177); */
         border-radius: 4px;
         font-size: x-large;
-        color: rgb(0, 114, 177);
+        color: rgb(255, 255, 255);
         cursor: pointer;
         font-family: sans-serif;
         font-weight: bold;
@@ -254,23 +239,23 @@ GITHUB BUTTON STUFF
         margin: 12px;
     }
     .LinkedinButton:hover {
-        background-color: rgb(0, 114, 177);
-        color: white;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 114, 177);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
     }
 
     .LinkedinProfileWrapper {
         position: relative;
-        width: 25px;
-        height: 25px;
+        width: 2rem;
+        height: 2rem;
     }
 
     .LinkedinProfileWrapper .pic {
         position: absolute;
         top: 0;
         left: 0;
-        width: 24px;
-        height: 24px;
+        width: 2rem;
+        height: 2rem;
         transition: opacity 500ms ease-in-out;
     }
 
