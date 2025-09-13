@@ -77,6 +77,10 @@ main {
   text-decoration: none;
   color: var(--text, #ffffff);
   font-size: 2rem;
+  text-shadow: 
+    1px 1px 0 rgba(0, 0, 0, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.3),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
   transition: background-color 500ms, color 500ms, box-shadow 500ms, border 500ms;
   border: 2px solid transparent;
   border-radius: 4px;
@@ -145,7 +149,9 @@ main {
   padding: 0.15em 0.4em;   /* small padding for click target */
   background-color: #a03f3f;
   border-radius: 7px;        /* rounded corners */
-  transition: background-color 500ms ease, color 500ms ease, opacity 500ms ease, border 500ms ease; /* smooth hover transition */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  transition: background-color 500ms ease, color 500ms ease, opacity 500ms ease, border 500ms ease, box-shadow 500ms ease; /* smooth hover transition */
 }
 
 .link-title-btn:visited {
@@ -156,8 +162,8 @@ main {
 .link-title-btn:hover,
 .link-title-btn:focus-visible {
   background: #9b2a2a;
-  outline: 2px solid rgb(145, 86, 86);
-  outline-offset: -2px;
+  /* outline: 2px solid rgb(145, 86, 86);
+  outline-offset: -2px; */
   color: #ffffff;
   text-decoration: none;
 }
@@ -252,6 +258,7 @@ summary.link-btn:hover {
   padding: 1rem;
   background: rgb(155, 42, 42);
   border-radius: 7px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .sr-only {
@@ -288,7 +295,7 @@ GITHUB BUTTON STUFF
         font-weight: bold;
         text-decoration: none;
         transition: background-color 500ms, color 500ms, box-shadow 500ms;
-        margin: 12px   
+        margin: 12px;   
     }
     .GithubButton:hover {
         /* background-color: rgb(180, 178, 178); */
@@ -350,6 +357,10 @@ GITHUB BUTTON STUFF
         font-family: sans-serif;
         font-weight: bold;
         text-decoration: none;
+          text-shadow: 
+    1px 1px 0 rgba(0, 0, 0, 0.3),
+    2px 2px 0 rgba(0, 0, 0, 0.3),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
         transition: background-color 500ms, color 500ms, box-shadow 500ms;
         margin: 12px;
     }
