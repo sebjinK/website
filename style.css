@@ -90,23 +90,113 @@ main {
   border-radius: 4px;
 }
 
+/* Title container: center reliably + responsive sizing */
 .titlename {
-    display: inline-block;                 /* not inline-block */
-    max-width: 200px;               /* match main */
-    margin: 2rem auto;                 /* center the block */
-    padding: 1rem;
-    /* padding-bottom: 3rem; */
-    font-size: 3rem;
-    font-family: 'Golos Text', sans-serif; /* custom font */
-    /* line-height: 1.2 ;             tighten line height */
-    word-break: break-word;
-    
-    background-color: #fff;         /* white background */
-    color: #000;                    /* make text readable on white */
-    text-align: center;             /* center title text */
-    border-radius: 20px;          /* optional: rounded edges */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional: subtle shadow */
+  display: block;                          /* was inline-block */
+  width: fit-content;
+  max-width: min(100%, 800px);
+  margin: 2rem auto;                       /* centers the block */
+  padding: clamp(10px, 2.5vw, 20px) clamp(14px, 3vw, 28px);
+  text-align: center;
+
+  background-color: #a53e3e;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  line-height: 1.2;
+  font-family: 'Golos Text', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 3rem);
 }
+
+.title-breadcrumbs {
+  display: flex;
+  justify-content: center;
+}
+
+/* Breadcrumb row */
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  gap: .25rem .5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;  /* keep each crumb on one line; wrapping happens between crumbs */
+}
+
+/* Non-clickable // separator with correct spacing */
+.crumbs li + li::before {
+  content: "//";
+  margin: 0 .5rem;      /* was 'margin-right: 0 .5rem;' */
+  color: #fff9f9;
+  pointer-events: none;
+}
+
+/* ✅ Correct class selectors (with dots) */
+.link-title-btn {
+  color: inherit;
+  text-decoration: none;         /* no underline by default */
+  padding: 0.15em 0.4em;   /* small padding for click target */
+  background-color: #a03f3f;
+  border-radius: 7px;        /* rounded corners */
+  transition: background-color 500ms ease, color 500ms ease, opacity 500ms ease, border 500ms ease; /* smooth hover transition */
+}
+
+.link-title-btn:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-title-btn:hover,
+.link-title-btn:focus-visible {
+  background: #9b2a2a;
+  outline: 2px solid rgb(145, 86, 86);
+  outline-offset: -2px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.link-title-btn:active {
+  opacity: 0.6;
+}
+
+/* Current page: plain text, no hover, no underline */
+.crumbs .current {
+  opacity: .9;
+  text-decoration: none !important;
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/* Small screens: tighten padding so it stays “pill”-like, not boxy */
+@media (max-width: 520px) {
+  .titlename {
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+}
+
+/* Wide-screen nudge rules can stay as-is; .titlename being block is fine */
+@media (min-width: 900px){
+  main {
+    max-width: var(--content);
+    margin-left: calc((100vw - var(--content)) * var(--nudge));
+    margin-right: calc((100vw - var(--content)) * (1 - var(--nudge)));
+  }
+  .titlename{
+    max-width: var(--content);
+    margin-left: calc((100vw - var(--content)) * var(--nudge));
+    margin-right: calc((100vw - var(--content)) * (1 - var(--nudge)));
+  }
+}
+
 
 /* .link-title-btn {
   display: inline-block;
