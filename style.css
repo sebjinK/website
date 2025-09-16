@@ -14,7 +14,7 @@ body {
 }
 
 main {
-  max-width: 800px;           /* or var(--content) */
+  max-width: 1200px;           /* or var(--content) */
   width: min(100%, 800px);
   margin-left: auto;          /* center horizontally */
   margin-right: auto;
@@ -92,6 +92,120 @@ main {
   background-color: #9b2a2a;
   border: 2px solid rgb(145, 86, 86);
   border-radius: 4px;
+}
+
+.project-open {
+  text-align: left;
+}
+
+#project-modal {
+  border: none;
+  padding: 0;
+  inset: 0;
+  max-width: min(820px, 92vw);
+  width: min(820px, 92vw);
+  background: transparent;
+}
+
+/* Dim the page underneath */
+#project-modal::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Modal shell + visual */
+#project-modal .modal-shell {
+  background: #a53e3e;            /* matches your title chip */
+  color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+  overflow: clip;
+  max-height: min(82vh, 900px);
+  display: block;
+  grid-template-rows: none;
+  position: relative;
+}
+
+#project-modal .modal-close {
+  position:absolute;
+  top: .5rem;
+  right: .5rem;
+  margin: 0;
+}
+
+#project-modal .modal-content {
+  padding: .5rem .9rem 1rem;                 /* dialog is display:none by default */
+}
+
+#project-model .modal-content header h2 {
+  margin-top: 0;
+}
+/* Close button */
+#project-modal .modal-close {
+  justify-self: end;
+  margin: .5rem .5rem 0 0;
+  font-size: 1.6rem;
+  line-height: 1;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: .25rem .4rem;
+  border-radius: 8px;
+}
+#project-modal .modal-close:hover,
+#project-modal .modal-close:focus-visible {
+  background: rgba(255,255,255,.12);
+}
+
+/* Content area scrolls if tall */
+#project-modal .modal-content {
+  padding: 1rem 1.25rem 1.5rem;
+  overflow: auto;
+}
+
+/* Type tweaks inside modal */
+#project-modal .modal-content header h2 {
+  margin: 0 0 .25rem 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+}
+#project-modal .modal-content .subtle {
+  margin: 0 0 1rem 0;
+  opacity: .85;
+  font-size: .96rem;
+}
+#project-modal .modal-content p {
+  margin: 0 0 .75rem 0;
+}
+#project-modal .modal-content .bullets {
+  margin: .75rem 0 0 1.25rem;
+}
+#project-modal .modal-content a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Entrance animation (respects reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  #project-modal[open] .modal-shell {
+    animation: projects-pop .16s ease-out;
+  }
+  @keyframes projects-pop {
+    from { transform: translateY(4px) scale(.98); opacity: 0; }
+    to   { transform: translateY(0)   scale(1);    opacity: 1; }
+  }
+}
+
+/* Optional: when a modal is open you might toggle overflow on <html> via JS.
+   Our JS sets element.style.overflow, so no class hook is required here. */
+
+/* Optional: make project sections stack nicely with a little space */
+#adversarialTraining,
+#CPDMod,
+#FedMultiModal,
+#SecureMeshNetworking,
+#EvaluatingEnergyEfficiency {
+  margin: .25rem 0;
 }
 
 /* Title container: center reliably + responsive sizing */

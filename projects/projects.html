@@ -18,20 +18,136 @@
         </nav>
     </div>
     <main>
-        <section id="AdversarialTraining">
+        <section id="adversarialTraining">
             <div class="adversarialTraining">
-                <a class="link-btn" href="adversarialtraining/adversarialtraining.html">
+                <a class="link-btn project-open" href="#tmpl-adversarial" data-target="tmpl-adversarial" aria-haspopup="dialog">
                     Adversarial Training Project
                 </a>
             </div>
         </section>
         <section id="CPDMod">
             <div class="CPDMod">
-                <a class="link-btn" href="cookevillepolicedepartment/cpd.html">
+                <a class="link-btn project-open" href="#tmpl-cpd" data-target="tmpl-cpd" aria-haspopup="dialog">
                     Cookeville Police Department Modules Project
                 </a>
             </div>
         </section>
+        <section id="FedMultiModal">
+            <div class="FedMultiModal">
+                 <a class="link-btn project-open" href="#tmpl-fedmultimodal" data-target="tmpl-fedmultimodal" aria-haspopup="dialog">
+                    Federated Multimodal Learning with the PTB-XL Dataset Project
+                </a>
+            </div>
+        </section>
+        <section id="SecureMeshNetworking">
+            <div class="SecureMeshNetworking">
+                 <a class="link-btn project-open" href="#tmpl-securemeshnetworking" data-target="tmpl-securemeshnetworking" aria-haspopup="dialog">
+                    Secure Mesh Networking Project
+                </a>
+            </div>
+        </section>
+        <section id="EvaluatingEnergyEfficiency">
+            <div class="EvaluatingEnergyEfficiency">
+                 <a class="link-btn project-open" href="#tmpl-evaluatingenergyefficiency" data-target="tmpl-evaluatingenergyefficiency" aria-haspopup="dialog">
+                    Evaluating Energy Efficiency of Different Cryptographic Algorithms in IOT Project
+                </a>
+            </div>
+        </section>
+
     </main>
+<!-- Modal template and dialog boxes -->
+    <template id="tmpl-adversarial">
+        <header>
+            <h2 id="project-modal-title">Adversarial Training Project</h2>
+            <p>
+                Adversarial training is a defensive technique in machine learning where models are trained
+                not only on clean data, but also on adversarially perturbed examples. By exposing the model 
+                to attacks during training, it can build resilience against them. This project demonstrates 
+                implementations using MNIST, FGSM, and PGD attacks.
+            </p>
+            <ul class="bullets">
+                <li>Technologies Used: </li>
+                <li>Goals: </li>
+                <li>Challenges: </li>
+                <li><a href="#" target="_blank" rel="noopener">GitHub Repository</a></li>
+            </ul>
+        </header>
+    </template>
+    <template id="tmpl-cpd">
+        <header>
+            <h2 id="project-modal-title">Cookeville Police Department Modules Project</h2>
+            <p>
+                This project involved developing specialized software modules for the Cookeville Police Department.
+                The modules were designed to streamline various administrative and operational tasks, enhancing 
+                overall efficiency and effectiveness. Key features included data management, reporting tools, 
+                and user-friendly interfaces tailored to the department's specific needs.
+            </p>
+            <ul class="bullets">
+                <li>Technologies Used: </li>
+                <li>Goals: </li>
+                <li>Challenges: </li>
+                <li><a href="#" target="_blank" rel="noopener">GitHub Repository</a></li>
+            </ul>
+        </header>
+    </template>
+    <template id="tmpl-fedmultimodal">
+        <header>
+            <h2 id="project-modal-title">Federated Multimodal Learning with the PTB-XL Dataset Project</h2>
+            <p>
+                This project focused on implementing federated multimodal learning techniques using the PTB-XL dataset,
+                which contains a large collection of annotated electrocardiogram (ECG) recordings. The goal was to 
+                develop models that can learn from distributed data sources while preserving data privacy, leveraging 
+                the strengths of multimodal data for improved performance in ECG analysis.
+            </p>
+            <ul class="bullets">
+                <li>Technologies Used: </li>
+                <li>Goals: </li>
+                <li>Challenges: </li>
+                <li><a href="#" target="_blank" rel="noopener">GitHub Repository</a></li>
+            </ul>
+        </header>
+    </template>
+    <template id="tmpl-securemeshnetworking">
+        <header>
+            <h2 id="project-modal-title">Secure Mesh Networking Project</h2>
+            <p>
+                This project involved the design and implementation of a secure mesh networking protocol to enhance
+                communication in decentralized networks. The focus was on ensuring data integrity, confidentiality,
+                and availability through robust encryption methods and fault-tolerant mechanisms. The project aimed to
+                provide a reliable and secure networking solution for various applications, including IoT and emergency
+                response systems.
+            </p>
+            <ul class="bullets">
+                <li>Technologies Used: </li>
+                <li>Goals: </li>
+                <li>Challenges: </li>
+                <li><a href="#" target="_blank" rel="noopener">GitHub Repository</a></li>
+            </ul>
+        </header>
+    </template>
+    <template id="tmpl-evaluatingenergyefficiency">
+        <header>
+            <h2 id="project-modal-title">Evaluating Energy Efficiency of Different Cryptographic Algorithms in IOT Project</h2>
+            <p>
+                This project aimed to evaluate the energy efficiency of various cryptographic algorithms when implemented
+                in Internet of Things (IoT) devices. Given the resource constraints of IoT hardware, the study focused on measuring power consumption,
+                processing time, and overall performance of algorithms such as AES, RSA, and ECC. The findings provided insights into selecting appropriate cryptographic methods for secure and energy-efficient IoT applications.
+            </p>
+            <ul class="bullets">
+                <li>Technologies Used: </li>
+                <li>Goals: </li>
+                <li>Challenges: </li>
+                <li><a href="#" target="_blank" rel="noopener">GitHub Repository</a></li>
+            </ul>
+        </header>
+    </template>
+    <dialog id="project-modal" aria-labelledby="project-modal-title" aria-modal="true">
+        <div class="modal-shell">
+            <button class="modal-close" aria-label="Close">×</button>
+            <div class="modal-content"><!-- JS injects template here --></div>
+        </div>
+    </dialog>
+    <script src="projects.js"></script>
+
 </body>
 </html>
