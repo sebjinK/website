@@ -90,7 +90,7 @@ main {
   0px 1px 0px rgba(0, 0, 0, 0.5),
   0px 2px 0px rgba(0, 0, 0, 0.5),
   0px 3px 0px rgba(0, 0, 0, 0.5); */
-  display: block;
+  /* display: block; */
   margin: 0.5rem auto;
 } 
 
@@ -108,6 +108,10 @@ main {
   0px 2px 2px rgba(0, 0, 0, 0.5),
   0px 3px 3px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
+}
+
+.link-btn:active {
+  opacity: .7;
 }
 
 .project-open {
@@ -152,7 +156,7 @@ main {
   padding: .5rem .9rem 1rem;                 /* dialog is display:none by default */
 }
 
-#project-model .modal-content header h2 {
+#project-modal .modal-content header h2 {
   margin-top: 0;
 }
 /* Close button */
@@ -195,11 +199,14 @@ main {
 #project-modal .modal-content .bullets {
   margin: .75rem 0 0 1.25rem;
 }
+/* keep your existing rule if you still want plain links underlined … */
 #project-modal .modal-content a {
   color: #fff;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+
 
 /* Entrance animation (respects reduced motion) */
 @media (prefers-reduced-motion: no-preference) {
@@ -212,8 +219,6 @@ main {
   }
 }
 
-/* Optional: when a modal is open you might toggle overflow on <html> via JS.
-   Our JS sets element.style.overflow, so no class hook is required here. */
 
 /* Optional: make project sections stack nicely with a little space */
 #adversarialTraining,
@@ -417,24 +422,28 @@ GITHUB BUTTON STUFF
         align-items: center;
         gap: 6px;
         padding: 15px 25px;
-        /* background-color: white; */
-        /* border: 2px solid #24292e; */
-        border-radius: 4px;
-        font-size: x-large;
+        border-bottom: 2px solid #FFFFFF;
+        /* outline: 1px solid #FFFFFF; */
+        border-radius: 0;
+        font-size: 2rem;
         color: #24292e;
         cursor: pointer;
         font-family: sans-serif;
         font-weight: bold;
         text-decoration: none;
-        transition: background-color 500ms, color 500ms, box-shadow 500ms;
-        margin: 12px;   
+        transition: background-color 500ms, color 500ms, box-shadow 500ms, outline 500ms, border 500ms;
+        margin: 0.5rem auto;   
+        min-width: 220px;
+        min-height: 60px;
+        box-sizing: border-box;
     }
     .GithubButton:hover {
-        /* background-color: rgb(180, 178, 178); */
-        /* opacity: .7; */
         background-color: #24292e;
         color: white;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+        border-bottom: 2px solid #24292e;
+        border-radius: 4px;
+        /* outline: 1px solid #000000 */
     }
     .GithubProfileWrapper {
         position: relative;
@@ -472,6 +481,54 @@ GITHUB BUTTON STUFF
     .GithubButton:active {
         opacity: .7;
     }
+
+    
+/* …but explicitly *not* the button-styled anchors */
+#project-modal .modal-content a.GithubButton,
+#project-modal .modal-content a.LinkedinButton,
+#project-modal .modal-content a.link-btn {
+  text-decoration: none !important; /* out-specify the blanket rule */
+  display: block;
+  text-align: center;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: .5rem auto;
+  font-size: 3rem;
+}
+
+#project-modal .modal-content a.GithubButton {
+  background-color: #FFFFFF;
+  color: #24292e;
+}
+#project-modal .modal-content a.GithubButton:hover {
+  background-color: #24292e;
+  color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+  border-radius: 4px;
+}
+
+#project-modal .modal-content .GithubProfileWrapper .pic,
+#project-modal .modal-content .LinkedinProfileWrapper .pic {
+  /* margin-right: 0.5rem; */
+  border-radius: 50%;
+  /* object-fit: cover; */
+  width: 6rem !important;
+  height: 6rem !important;
+  /* position: relative; */
+}
+
+/* (optional) make the icon scale nicely on narrow screens */
+@media (max-width: 480px) {
+  #project-modal .modal-content .GithubProfileWrapper,
+  #project-modal .modal-content .LinkedinProfileWrapper,
+  #project-modal .modal-content .GithubProfileWrapper .pic,
+  #project-modal .modal-content .LinkedinProfileWrapper .pic {
+    width: 72px;
+    height: 72px;
+  }
+}
     /*GITHUB BUTTON STUFF*/
 
     /*Linkedin button stuff*/
@@ -483,23 +540,25 @@ GITHUB BUTTON STUFF
         /* background-color: white;
         border: 1px solid rgb(0, 114, 177); */
         border-radius: 4px;
-        font-size: x-large;
+        border-bottom: 2px solid #FFFFFF;
+        font-size: 2rem;
         color: rgb(255, 255, 255);
         cursor: pointer;
         font-family: sans-serif;
         font-weight: bold;
         text-decoration: none;
-          text-shadow: 
-    1px 1px 0 rgba(0, 0, 0, 0.3),
-    2px 2px 0 rgba(0, 0, 0, 0.3),
-    3px 3px 0 rgba(0, 0, 0, 0.3);
+        text-shadow: 
+        1px 1px 0 rgba(0, 0, 0, 0.3),
+        2px 2px 0 rgba(0, 0, 0, 0.3),
+        3px 3px 0 rgba(0, 0, 0, 0.3);
         transition: background-color 500ms, color 500ms, box-shadow 500ms;
-        margin: 12px;
+        margin: .5rem auto;
     }
     .LinkedinButton:hover {
         background-color: rgb(255, 255, 255);
         color: rgb(0, 114, 177);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+        text-shadow: none;
     }
 
     .LinkedinProfileWrapper {
