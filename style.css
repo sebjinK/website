@@ -488,14 +488,15 @@ GITHUB BUTTON STUFF
 #project-modal .modal-content a.LinkedinButton,
 #project-modal .modal-content a.link-btn {
   text-decoration: none !important; /* out-specify the blanket rule */
-  display: block;
+  display: flex;
   text-align: center;
   border: 2px solid #FFFFFF;
   border-radius: 4px;
   /* justify-content: center; */
   /* align-items: center; */
   margin: .5rem auto;
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 1;
 }
 
 #project-modal .modal-content a.GithubButton {
@@ -509,15 +510,24 @@ GITHUB BUTTON STUFF
   border-radius: 4px;
 }
 
+#project-modal .modal-content .GithubProfileWrapper,
+#project-modal .modal-content .LinkedinProfileWrapper {
+  position: relative;
+  width: 36px;   /* matches your icon size */
+  height: 36px;
+  flex-shrink: 0; /* don’t let it collapse */
+  margin-right: 0.5rem; /* spacing between icon and text */
+}
+
 #project-modal .modal-content .GithubProfileWrapper .pic,
 #project-modal .modal-content .LinkedinProfileWrapper .pic {
-  /* margin-right: 0.5rem; */
+  position: absolute;
+  inset: 0;                 /* fill the wrapper */
+  width: 100% !important;
+  height: 100% !important;
   border-radius: 50%;
-  /* object-fit: cover; */
-  width: 6rem !important;
-  height: 6rem !important;
-  /* position: relative; */
 }
+
 
 /* (optional) make the icon scale nicely on narrow screens */
 @media (max-width: 480px) {
