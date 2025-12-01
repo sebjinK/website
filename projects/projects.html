@@ -20,6 +20,13 @@
         </nav>
     </div>
     <main>
+        <section id="FitnessBuddy">
+            <div class="FitnessBuddy">
+                <a class="link-btn project-open" href="#tmpl-FitnessBuddy" data-target="tmpl-FitnessBuddy" aria-haspopup="dialog">
+                    Fitness Buddy
+                </a>
+            </div>
+        </section>
         <section id="PBA-QualityControl">
             <div class="PBA-QualityControl">
                 <a class="link-btn project-open" href="#tmpl-PBAQC" data-target="tmpl-PBAQC" aria-haspopup="dialog">
@@ -65,6 +72,45 @@
 
     </main>
 <!-- Modal template and dialog boxes -->
+  <template id="tmpl-FitnessBuddy">
+        <header>
+            <h2 id="project-modal-title">Fitness Buddy</h2>
+            <p>
+                
+            </p>
+            <ul class="bullets">
+                <li>
+                    <u>Technology Stack:</u> Node.js and Express Web Backend, Python FastAPI Microservices for ML Model Hosting, MariaDB MySQL Server, Docker, GitHub, HuggingFace Models  
+                </li>
+                <li><u>Goals:</u>  
+                    Build a lightweight, conversational wellness system that helps users maintain consistent health habits without relying on costly wearables or complex tracking interfaces.</li>
+                </li>
+                <li><u>Challenges:</u> 
+                    Extracting accurate health information from unstructured text proved unreliable; purely LLM-driven logging was inconsistent without structured forms. Ensuring the Qwen model consistently produced structured FEEDBACK and FOCUS XML outputs required careful prompt engineering and testing.
+                </li>
+                <li><u>Solutions:</u> 
+                    Implemented a hybrid input system: structured daily forms combined with optional natural-language notes, reducing ambiguity while keeping the experience conversational. Designed a personalized prompt-building pipeline that merges baseline user data, daily logs, and recent suggestions before sending them to Qwen for consistent, structured recommendations.
+                </li>
+                <div class="Github_Link">
+                    <a class="GithubButton" href="https://github.com/sebjinK/Fitness-Buddy" target="_blank" rel="noopener">
+                        <div class="GithubProfileWrapper">
+                            <img 
+                                class="pic base"
+                                src="../links/assets/github-mark.png"
+                                alt="Github Logo"
+                            />
+                            <img
+                                class="pic hover"
+                                src="../links/assets/github-mark-white.png"
+                                aria-hidden="true"
+                            />
+                        </div>
+                        github repository
+                    </a>
+                </div>
+            </ul>
+        </header>
+    </template>    
     <template id="tmpl-PBAQC">
         <header>
             <h2 id="project-modal-title">Portobello America Hackathon - Quality Control Team</h2>
