@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sebjin • Projects</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preload" as="image" href="../links/assets/in-logo/InBug-White.png">
+  <link rel="preload" as="image" href="../links/assets/in-logo/LI-In-Bug.png">
+  <link rel="preload" as="image" href="../links/assets/github-mark.png">
+  <link rel="preload" as="image" href="../links/assets/github-mark-white.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="titlename">
+        <nav class="title-breadcrumbs" aria-label="Breadcrumb">
+            <ol class="crumbs">
+                <li><a class="link-title-btn" href="../index.html">sebjin</a></li>
+                <li><a class="link-title-btn" href="../index.html">made</a></li>
+                <li><a class="link-title-btn" href="roles.html">projects</a></li>
+            </ol>
+        </nav>
+    </div>
+    <main>
+        <section id="AICyberResearcher">
+            <div class="AICyberResearcher">
+                <a class="link-btn project-open" href="#tmpl-AICyberResearcher" data-target="tmpl-AICyberResearcher" aria-haspopup="dialog">
+                    A.I. Cyber Researcher 
+                </a>
+            </div>
+        </section>
+        <section id="CEROC Ambassador">
+            <div class="CEROC Ambassador">
+                <a class="link-btn project-open" href="#tmpl-ceroc" data-target="tmpl-ceroc" aria-haspopup="dialog">
+                    CEROC Ambassador
+                </a>
+            </div>
+        </section>
+        <section id="DevOps Teaching Assistant">
+            <div class="DevOps Teaching Assistant">
+                 <a class="link-btn project-open" href="#tmpl-devops" data-target="tmpl-devops" aria-haspopup="dialog">
+                    DevOps Teaching Assistant
+                </a>
+            </div>
+        </section>
+
+    </main>
+<!-- Modal template and dialog boxes -->
+    <template id="tmpl-adversarial">
+        <header>
+            <h2 id="project-modal-title">Adversarial Training Project</h2>
+            <p>
+                Adversarial training is a defensive technique in machine learning where models are trained
+                not only on clean data, but also on adversarially perturbed examples. By exposing the model 
+                to attacks during training, it can build resilience against them. This project demonstrates 
+                implementations using MNIST, FGSM, and PGD attacks.
+            </p>
+            <ul class="bullets">
+                <li>
+                    <u>Technologies Used:</u>  Python, PyTorch, Jupyter Notebook, NumPy, Matplotlib, torchvision (MNIST dataset)
+                </li>
+                <li><u>Goals:</u> Implement adversarial training on MNIST, evaluate robustness against FGSM and PGD attacks, and compare clean vs adversarial accuracy.</li>
+                <li><u>Challenges:</u> Balancing model accuracy with robustness, ensuring stable training with adversarial examples, and tuning attack parameters (epsilon, step size, iterations).</li>
+            </ul>
+        </header>
+    </template>
+    <template id="tmpl-cpd">
+        <header>
+            <h2 id="project-modal-title">Cookeville Police Department Modules Project</h2>
+            <p>
+                This project involved developing specialized software modules for the Cookeville Police Department.
+                The modules were designed to streamline various administrative and operational tasks, enhancing 
+                overall efficiency and effectiveness. Key features included data management, reporting tools, 
+                and user-friendly interfaces tailored to the department's specific needs.
+            </p>
+            <ul class="bullets">
+                <li><u>Technologies Used:</u> JS, Node.js, Express, AWS RDS, AWS EC2, MariaDB, MySQL HTML, CSS, AWS S3, GitHub</li>
+                <li><u>Goals:</u> Develop a comprehensive suite of modules to enhance police operations, improve data accessibility, and facilitate better decision-making.</li>
+                <li><u>Challenges:</u> Ensuring data security and privacy, integrating with existing systems, and providing user-friendly interfaces.</li>
+        </header>
+    </template>
+    <template id="tmpl-fedmultimodal">
+        <header>
+            <h2 id="project-modal-title">Federated Multimodal Learning with the PTB-XL Dataset Project</h2>
+            <p>
+                This project focused on implementing federated multimodal learning techniques using the PTB-XL dataset,
+                which contains a large collection of annotated electrocardiogram (ECG) recordings. The goal was to 
+                develop models that can learn from distributed data sources while preserving data privacy, leveraging 
+                the strengths of multimodal data for improved performance in ECG analysis.
+            </p>
+            <ul class="bullets">
+                <li><u>Technologies Used:</u> Python, TensorFlow, Keras, NumPy, Pandas, Scikit-learn, Fed-Multimodal</li>
+                <li><u>Goals:</u> Develop a federated learning framework for ECG analysis, improve model performance through multimodal data integration, and ensure data privacy during training.</li>
+                <li><u>Challenges:</u> Handling data heterogeneity across clients, optimizing communication efficiency, and maintaining model accuracy with limited data access.</li>
+            </ul>
+        </header>
+    </template>
+    <dialog id="project-modal" aria-labelledby="project-modal-title" aria-modal="true">
+        <div class="modal-shell">
+            <button class="modal-close" aria-label="Close">×</button>
+            <div class="modal-content"><!-- JS injects template here --></div>
+        </div>
+    </dialog>
+    <script src="projects.js"></script>
+
+</body>
+</html>

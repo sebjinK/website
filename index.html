@@ -1,93 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebjin</title>
-    <link rel="stylesheet" href="style.css">
-      <meta name="viewport" content="width=device-width" />
-      <!-- in <head> of index.html -->
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap" rel="stylesheet">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sebjin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:           #08060e;
+    --bg-surface:   #100d1b;
+    --bg-card:      #181428;
+    --bg-card-up:   #1e1932;
 
-    <!-- <base href="/website/"> -->
-  </head>
-  <body>
-    <div class="titlename">
-        <nav class="title-breadcrumbs" aria-label="Breadcrumb">
-            <ol class="crumbs">
-                <li><a class="link-title-btn" href="#">sebjin</a></li>
-                <li><a class="link-title-btn" href="#">made</a></li>
-            </ol>
-        </nav>
+    --text-primary:   #eceaf6;
+    --text-secondary: #8d86a3;
+    --text-muted:     #504b68;
+
+    --accent:       #a78bfa;
+    --accent-str:   #c4b5fd;
+    --accent-dim:   #6d5caa;
+    --accent-glow:  rgba(167, 139, 250, 0.14);
+
+    --gold:         #d4a84b;
+    --gold-dim:     #97772f;
+    --gold-glow:    rgba(212, 168, 75, 0.10);
+
+    --border-faint: rgba(255,255,255,0.045);
+    --border-soft:  rgba(255,255,255,0.09);
+    --border-rim:   rgba(255,255,255,0.12);
+
+    --sh-xs: 0 1px 2px rgba(0,0,0,.55);
+    --sh-sm: 0 2px 8px rgba(0,0,0,.55), 0 1px 2px rgba(0,0,0,.45);
+    --sh-md: 0 6px 24px rgba(0,0,0,.60), 0 2px 6px rgba(0,0,0,.50);
+    --sh-lg: 0 16px 56px rgba(0,0,0,.70), 0 6px 16px rgba(0,0,0,.50);
+
+    --mono:  'DM Mono', monospace;
+    --serif: 'Newsreader', Georgia, serif;
+
+    --content-max: 900px;
+    --side-pad: clamp(1.5rem, 5vw, 3rem);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--serif);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── Noise grain ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.038'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Ambient light ── */
+  .ambient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse 1000px 700px at 10% -5%,  rgba(110, 65, 230, 0.10) 0%, transparent 65%),
+      radial-gradient(ellipse  600px 500px at 85%  8%,  rgba(212,168, 75, 0.05) 0%, transparent 60%),
+      radial-gradient(ellipse  700px 400px at 50% 100%, rgba(80, 40,180, 0.07) 0%, transparent 70%);
+  }
+
+  /* ── Sticky header ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    background: rgba(8, 6, 14, 0.72);
+    border-bottom: 1px solid var(--border-faint);
+    animation: fadeDown 0.5s ease both;
+  }
+
+  .header-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 0 var(--side-pad);
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: lowercase;
+    color: var(--accent);
+    text-shadow: 0 0 28px var(--accent-glow);
+  }
+
+  nav { display: flex; gap: 2rem; }
+
+  nav a {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    transition: width 0.25s ease;
+  }
+
+  nav a:hover { color: var(--text-primary); }
+  nav a:hover::after { width: 100%; }
+
+  /* ── Layout ── */
+  .site-wrapper {
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: 0 var(--side-pad);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 6rem 0 5rem;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .eyebrow-rule {
+    width: 28px; height: 1px;
+    background: linear-gradient(90deg, var(--accent-dim), transparent);
+  }
+
+  .eyebrow-text {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent-dim);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5.5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.18;
+    color: var(--text-primary);
+    margin-bottom: 2.25rem;
+    max-width: 600px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 strong {
+    font-weight: 500;
+    color: var(--accent-str);
+  }
+
+  .hero-sub {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-sub-text {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .hero-certs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 0.1rem;
+  }
+
+  .cert {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    padding: 0.28em 0.65em;
+    border: 1px solid rgba(212, 168, 75, 0.22);
+    border-radius: 3px;
+    background: var(--gold-glow);
+    white-space: nowrap;
+    box-shadow: var(--sh-xs), inset 0 1px 0 rgba(255,255,255,0.04);
+    text-decoration: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  a.cert:hover {
+    border-color: rgba(212, 168, 75, 0.5);
+    background: rgba(212, 168, 75, 0.15);
+  }
+
+  /* ── Dividers ── */
+  .divider {
+    border: none; height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-soft) 15%, var(--border-soft) 85%, transparent 100%);
+  }
+
+  /* ── Sections ── */
+  section { padding: 4rem 0; }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2.25rem;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .section-link {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    color: var(--accent-dim);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+  }
+  .section-link:hover { color: var(--accent); }
+
+  /* ── Project cards ── */
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-faint);
+    border-radius: 8px;
+    padding: 1.65rem 1.85rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: start;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--sh-sm);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+  }
+
+  /* Top-edge rim light */
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-rim) 40%, var(--border-rim) 60%, transparent);
+    pointer-events: none;
+  }
+
+  /* Left indicator */
+  .project-card::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 16%; bottom: 16%;
+    width: 0;
+    background: linear-gradient(180deg, var(--gold), var(--gold-dim));
+    border-radius: 0 2px 2px 0;
+    transition: width 0.2s ease;
+  }
+
+  .project-card:hover {
+    background: var(--bg-card-up);
+    border-color: var(--border-soft);
+    box-shadow: var(--sh-md), 0 0 0 1px var(--border-faint);
+    transform: translateY(-3px);
+  }
+
+  .project-card:hover::after { width: 3px; }
+
+  .project-name {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .project-desc {
+    font-family: var(--mono);
+    font-size: 0.71rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 460px;
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-self: center;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.57rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    border: 1px solid rgba(212, 168, 75, 0.18);
+    border-radius: 2px;
+    padding: 0.24em 0.58em;
+    background: rgba(212, 168, 75, 0.04);
+    white-space: nowrap;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+  }
+
+  /* ── About ── */
+  .about-text {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.92;
+    max-width: 600px;
+  }
+
+  .about-text + .about-text { margin-top: 1.5rem; }
+
+  .about-text a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.22);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .about-text a:hover { color: var(--accent-str); border-color: var(--accent); }
+
+  /* ── Contact ── */
+  .contact-row {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-row a {
+    font-family: var(--mono);
+    font-size: 0.71rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: color 0.2s ease;
+  }
+  .contact-row a:hover { color: var(--text-primary); }
+
+  .contact-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    flex-shrink: 0;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .contact-row a:hover .contact-dot {
+    background: var(--accent);
+    box-shadow: 0 0 7px var(--accent);
+  }
+
+  /* ── Footer ── */
+  footer {
+    padding: 2.75rem 0;
+    border-top: 1px solid var(--border-faint);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer span {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-section {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .fade-section { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 600px) {
+    nav            { gap: 1.4rem; }
+    .hero          { padding: 3.5rem 0 3rem; }
+    .project-card  { grid-template-columns: 1fr; }
+    .project-tags  { justify-content: flex-start; margin-top: 0.75rem; }
+    .contact-row   { flex-direction: column; gap: 1.1rem; }
+    footer         { flex-direction: column; gap: 0.6rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ambient"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">sebjin</div>
+    <nav>
+      <a href="#projects">projects</a>
+      <a href="#about">about</a>
+      <a href="resume/resume.html">resume</a>
+      <a href="#contact">links</a>
+    </nav>
+  </div>
+</header>
+
+<div class="site-wrapper">
+
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-rule"></div>
+      <span class="eyebrow-text">Sebastian Kennedy</span>
     </div>
-    <main>
-
-        <section class="banner" id="contacts//links">
-        <div class="contactsandlinks">
-          <a class="link-btn" href="links/links.html">
-            <span>
-              links
-            </span>
-          </a>
-        </div>
-      </section>
-
-        <section class="banner" id="resumes">
-          <a class="link-btn" href="resume/resume.html">
-            <span>
-              resume
-            </span>
-          </a>
-      </section>
-
-        <section class="banner" id="projects">
-        <div class="projectsbutton">
-          <a class="link-btn" href="projects/projects.html">
-            <span>
-              projects
-            </span>
-          </a>
-        </div>
-      </section>
-
-      <!-- <div id="abouttitle" class="link-btn" role="button" tabindex="0" aria-expanded="false" aria-controls="aboutpara">about</div> -->
-      <!-- Click target (looks like your other buttons) -->
-      <div id="aboutTrigger" class="link-btn" role="button" tabindex="0"
-          aria-controls="about-content" aria-expanded="false">
-        about
+    <h1>Cloud, security, and <strong>software engineering</strong>.</h1>
+    <div class="hero-sub">
+      <span class="hero-sub-text">
+        CS graduate, Tennessee Tech University.<br>
+        Concentration in Information Assurance &amp; Cybersecurity.
+      </span>
+      <div class="hero-certs">
+        <a href="https://cp.certmetrics.com/comptia/en/public/verify/credential/3aef06482aaf412b820695dac198b366" target="_blank" rel="noopener" class="cert">Security+</a>
+        <span class="cert">AWS SA &mdash; in progress</span>
       </div>
+    </div>
+  </section>
 
-      <details class="about-section" id="about-details">
-        <!-- keep for a11y but not clickable visually -->
-        <summary class="sr-only">About</summary>
-        <div class="about-anim" id="about-content">
-          <div class="aboutpara">
-              <p>
-                I'm a Tennessee Tech Undergraduate (about to graduate in DECEMBER 2025)
-                I've been working as a Computer Science major with a concentration in Cybersecurity for a while now
-                and I've been trying to understand more about how the world interacts with my professional interests
-                (that being a mix of networking, software development, and cybersecurity). Over time, I grew a bit bored of it 
-                which may be due to school. Nowadays, my goals are to both code for myself, and enjoy myself whilst I learn
-              </p>
-              <p>
-                Now, I want to be able to contribute more towards the field than I already have as both a 
-                <span class="highlight ambassador">CEROC Ambassador</span> 
-                and as an 
-                <span class="highlight researcher"> AI-Cyber Researcher</span>. 
-                Both jobs offered a lot in the ways of giving me opportunities and I think I'll be able to put 
-                forward my best my next roles because of them.
-                <br><br>
-                Many programmers go through what is called the 
-                <a href="https://en.wikipedia.org/wiki/Overjustification_effect" target="_blank" rel="nooperner">Overjustification Effect</a>
-                as a result of their job, making them lose passion for this space. 
-                This website is my answer to that, and I will continue to post what I love to it. 
-              </p>
-          </div>
+  <hr class="divider">
+
+  <section id="projects" class="fade-section">
+    <div class="section-header">
+      <span class="section-label">Selected Projects</span>
+      <a href="projects/projects.html" class="section-link">view all &rarr;</a>
+    </div>
+
+    <div class="projects-grid">
+
+      <a href="https://github.com/sebjinK" class="project-card">
+        <div>
+          <div class="project-name">Agentic Security Triage System</div>
+          <div class="project-desc">Mini SIEM with confidence-threshold agentic loop. AWS S3 ingest, Lambda processing, Bedrock/Claude Haiku for automated alert classification and triage. SNS alerting on low-confidence findings.</div>
         </div>
-      </details>
+        <div class="project-tags">
+          <span class="tag">AWS</span>
+          <span class="tag">Python</span>
+          <span class="tag">LLM</span>
+        </div>
+      </a>
 
+      <a href="https://github.com/sebjinK/QualityControl-PBA" class="project-card">
+        <div>
+          <div class="project-name">Portobello America Hackathon QC</div>
+          <div class="project-desc">CNN-based tile defect detection and PaddleOCR module for factory floor quality control. React frontend, FastAPI backend, Docker deployment on GCP.</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">CNN</span>
+          <span class="tag">OCR</span>
+          <span class="tag">Docker</span>
+        </div>
+      </a>
 
-    </main>
-    <script src="back.js"></script>
-  </body>
+      <a href="https://github.com/sebjinK/Fitness-Buddy" class="project-card">
+        <div>
+          <div class="project-name">Fitness Buddy</div>
+          <div class="project-desc">Conversational wellness system with hybrid structured/NLP input. Node.js/Express backend, containerized Qwen 2.5 for personalized health recommendations. MariaDB, Docker Compose.</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">ML</span>
+          <span class="tag">Docker</span>
+        </div>
+      </a>
+
+      <a href="roles/roles.html" class="project-card">
+        <div>
+          <div class="project-name">Cookeville PD Security Assessment</div>
+          <div class="project-desc">SaaS modules for police department operations. Led security risk assessment using OWASP ZAP, OpenVAS, Nuclei, Nmap, Sslyze, and Snyk. AWS RDS/EC2/S3 infrastructure.</div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">DevOps</span>
+          <span class="tag">Security</span>
+          <span class="tag">AWS</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="about" class="fade-section">
+    <div class="section-header">
+      <span class="section-label">About</span>
+    </div>
+    <p class="about-text">
+      I spent the last two years at Tennessee Tech working as an
+      <a href="roles/roles.html">AI-Cyber Researcher</a> and
+      <a href="roles/roles.html">CEROC Ambassador</a>,
+      building at the overlap of security tooling, adversarial ML, and cloud infrastructure.
+    </p>
+    <p class="about-text">
+      A lot of programmers run into the
+      <a href="https://en.wikipedia.org/wiki/Overjustification_effect" target="_blank" rel="noopener">Overjustification Effect</a>
+      once the work becomes purely transactional. This site is where I keep the things I build because I want to, not because I have to.
+    </p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="contact" class="fade-section">
+    <div class="section-header">
+      <span class="section-label">Links</span>
+    </div>
+    <div class="contact-row">
+      <a href="mailto:sebjinkennedy@gmail.com">
+        <span class="contact-dot"></span>
+        sebjinkennedy@gmail.com
+      </a>
+      <a href="https://github.com/sebjink" target="_blank" rel="noopener">
+        <span class="contact-dot"></span>
+        github
+      </a>
+      <a href="https://www.linkedin.com/in/sebjin-kennedy/" target="_blank" rel="noopener">
+        <span class="contact-dot"></span>
+        linkedin
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>sebjin &copy; 2026</span>
+    <span>nashville, tn</span>
+  </footer>
+
+</div>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-section').forEach(el => io.observe(el));
+</script>
+
+</body>
 </html>
