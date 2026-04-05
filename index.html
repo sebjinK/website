@@ -395,6 +395,17 @@
     display: flex;
     flex-direction: column;
   }
+  #modal-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #project-modal .modal-close { z-index: 1; }
+  #project-modal .modal-content { position: relative; z-index: 1; }
+
   #project-modal .modal-close {
     position: absolute; top: 0.75rem; right: 0.75rem;
     font-size: 1.2rem; line-height: 1;
@@ -758,86 +769,14 @@
 
 <dialog id="project-modal" aria-labelledby="project-modal-title" aria-modal="true">
   <div class="modal-shell">
+    <canvas id="modal-canvas" aria-hidden="true"></canvas>
     <button class="modal-close" aria-label="Close">&times;</button>
     <div class="modal-content"></div>
   </div>
 </dialog>
 
 <script src="projects/projects.js"></script>
-<script>
-(function () {
-  const canvas = document.getElementById('cursor-canvas');
-  const ctx = canvas.getContext('2d');
-
-  const RADIUS = 110;
-  const SPACING = 24;       // distance between hex centres
-  const MAX_SIZE = 30;       // hex circumradius at cursor centre
-
-  let mx = -9999, my = -9999;
-  let lx = -9999, ly = -9999; // lerped position
-
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  document.addEventListener('mouseleave', () => { mx = -9999; my = -9999; });
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function hex(x, y, r) {
-    ctx.beginPath();
-    for (let i = 0; i < 6; i++) {
-      const a = (Math.PI / 3) * i - Math.PI / 6;
-      const px = x + r * Math.cos(a);
-      const py = y + r * Math.sin(a);
-      i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
-    }
-    ctx.closePath();
-  }
-
-  function render() {
-    requestAnimationFrame(render);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Lerp towards real mouse for smooth entry/exit
-    lx += (mx - lx) * 0.12;
-    ly += (my - ly) * 0.12;
-
-    if (lx < -500) return; // still off-screen
-
-    const hexW  = SPACING * Math.sqrt(3);
-    const hexH  = SPACING * 1.5;
-    const startCol = Math.floor((lx - RADIUS) / hexW) - 1;
-    const endCol   = Math.ceil ((lx + RADIUS) / hexW) + 1;
-    const startRow = Math.floor((ly - RADIUS) / hexH) - 1;
-    const endRow   = Math.ceil ((ly + RADIUS) / hexH) + 1;
-
-    for (let row = startRow; row <= endRow; row++) {
-      for (let col = startCol; col <= endCol; col++) {
-        const offset = (row % 2 !== 0) ? hexW / 2 : 0;
-        const hx = col * hexW + offset;
-        const hy = row * hexH;
-
-        const dist = Math.hypot(hx - lx, hy - ly);
-        if (dist >= RADIUS) continue;
-
-        const t    = 1 - dist / RADIUS;   // 1 at centre → 0 at edge
-        const size = MAX_SIZE * t;
-        const alpha = t * 0.3;
-
-        ctx.strokeStyle = `rgba(180, 140, 255, ${alpha})`;
-        ctx.lineWidth   = 1;
-        hex(hx, hy, size);
-        ctx.stroke();
-      }
-    }
-  }
-
-  render();
-})();
-</script>
+<script src="honeycomb.js"></script>
 
 </body>
 </html>

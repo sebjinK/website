@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<canvas id="cursor-canvas" aria-hidden="true"></canvas>
     <div class="titlename">
         <nav class="title-breadcrumbs" aria-label="Breadcrumb">
             <ol class="crumbs">
@@ -266,30 +267,8 @@
         </a>
 
     </main>
-
-<!-- Modal templates -->
-    <template id="tmpl-siem">
-        <header>
-            <h2 id="project-modal-title">Agentic Security Triage System (Mini SIEM)</h2>
-            <p>Lightweight agentic AI-powered security triage system combining deterministic rule-based scoring with LLM reasoning to classify and respond to IAM log events. Logs are ingested from AWS S3, processed by Lambda, and classified by Bedrock/Claude Haiku. Low-confidence findings trigger SNS alerts for human review.</p>
-            <ul class="bullets">
-                <li><u>Technologies:</u> Python, AWS S3, Lambda, Bedrock, Claude Haiku, SNS</li>
-                <li><u>Goals:</u> Automate alert triage with a confidence-threshold agentic loop; reduce analyst fatigue on routine classifications. Modular pipeline analyzes login telemetry with configurable risk scoring and automated threat enrichment via IP reputation checks.</li>
-                <li><u>Challenges:</u> Tuning confidence thresholds to balance false-positive rate against escalation volume; cold-start latency on Lambda.</li>
-                <div class="Github_Link">
-                    <a class="GithubButton" href="https://github.com/sebjinK" target="_blank" rel="noopener">
-                        <div class="GithubProfileWrapper">
-                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
-                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
-                        </div>
-                        github repository
-                    </a>
-                </div>
-            </ul>
-        </header>
-    </template>
-
-    <template id="tmpl-fitness">
+<!-- Modal template and dialog boxes -->
+    <template id="tmpl-adversarial">
         <header>
             <h2 id="project-modal-title">Fitness Buddy</h2>
             <p>Conversational wellness system with hybrid structured/NLP input. Users interact via natural language; a containerized Qwen 2.5 Instruct model generates personalized health recommendations stored in MariaDB. Built automation and test scripts for QA.</p>
@@ -516,11 +495,13 @@
 
     <dialog id="project-modal" aria-labelledby="project-modal-title" aria-modal="true">
         <div class="modal-shell">
+            <canvas id="modal-canvas" aria-hidden="true"></canvas>
             <button class="modal-close" aria-label="Close">×</button>
             <div class="modal-content"><!-- JS injects template here --></div>
         </div>
     </dialog>
     <script src="projects.js"></script>
+    <script src="../honeycomb.js"></script>
 
 </body>
 </html>
