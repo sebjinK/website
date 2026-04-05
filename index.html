@@ -125,10 +125,13 @@
     justify-content: center;
   }
 
-  /* Longer-content pages: top-align */
+  /* Longer-content pages: top-align and scrollable */
   #page-projects,
   #page-experience {
     justify-content: flex-start;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-dim) transparent;
   }
 
   /* ── Sidebar dot navigation ── */
@@ -255,7 +258,7 @@
   }
 
   /* ── Sections ── */
-  section { padding: 2rem 0; }
+  section { padding: 1.25rem 0; }
 
   .section-bar {
     display: flex;
@@ -289,7 +292,7 @@
     display: block;
     text-decoration: none;
     color: inherit;
-    padding: 1.25rem 0;
+    padding: 0.85rem 0;
     border-bottom: var(--border-thin);
     transition: padding-left 0.2s ease;
   }
@@ -321,7 +324,7 @@
 
   .project-title {
     font-family: var(--display);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 400;
   }
 
