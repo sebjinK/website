@@ -268,7 +268,28 @@
 
     </main>
 <!-- Modal template and dialog boxes -->
-    <template id="tmpl-adversarial">
+    <template id="tmpl-siem">
+        <header>
+            <h2 id="project-modal-title">Agentic Security Triage System</h2>
+            <p>Mini SIEM with a confidence-threshold agentic loop. Logs are ingested from AWS S3, processed by Lambda, and classified by Bedrock/Claude Haiku. Low-confidence findings trigger SNS alerts for human review.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Python, AWS S3, Lambda, Bedrock, Claude Haiku, SNS</li>
+                <li><u>Goals:</u> Automate alert triage with an LLM-backed confidence loop; reduce analyst fatigue on routine classifications.</li>
+                <li><u>Challenges:</u> Tuning confidence thresholds to balance false-positive rate against escalation volume; cold-start latency on Lambda.</li>
+                <div class="Github_Link">
+                    <a class="GithubButton" href="https://github.com/sebjinK/mini-siem" target="_blank" rel="noopener">
+                        <div class="GithubProfileWrapper">
+                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
+                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
+                        </div>
+                        github repository
+                    </a>
+                </div>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-fitness">
         <header>
             <h2 id="project-modal-title">Fitness Buddy</h2>
             <p>Conversational wellness system with hybrid structured/NLP input. Users interact via natural language; a containerized Qwen 2.5 Instruct model generates personalized health recommendations stored in MariaDB. Built automation and test scripts for QA.</p>

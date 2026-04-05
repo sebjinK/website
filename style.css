@@ -556,7 +556,7 @@ section { margin: 0; }
   z-index: 0;
 }
 
-#project-modal .modal-close { z-index: 1; }
+#project-modal .modal-close { z-index: 2; }
 #project-modal .modal-content { position: relative; z-index: 1; }
 
 /* ── sr-only ── */
