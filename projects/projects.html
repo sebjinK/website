@@ -9,85 +9,278 @@
   <link rel="preload" as="image" href="../links/assets/github-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="titlename">
         <nav class="title-breadcrumbs" aria-label="Breadcrumb">
             <ol class="crumbs">
-                <li><a class="link-title-btn" href="../index.html">sebjin</a></li>
-                <li><a class="link-title-btn" href="../index.html">made</a></li>
+                <li><a class="link-title-btn" href="../index.html">← home</a></li>
                 <li><a class="link-title-btn" href="projects.html">projects</a></li>
             </ol>
         </nav>
     </div>
     <main>
-        <section id="adversarialTraining">
-            <div class="adversarialTraining">
-                <a class="link-btn project-open" href="#tmpl-adversarial" data-target="tmpl-adversarial" aria-haspopup="dialog">
-                    Adversarial Training Project
-                </a>
+        <div class="section-bar">
+            <span>All Projects</span>
+        </div>
+
+        <a class="project-row project-open" href="#tmpl-siem" data-target="tmpl-siem" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">01</span>
+                <span class="project-title">Agentic Security Triage System</span>
             </div>
-        </section>
-        <section id="CPDMod">
-            <div class="CPDMod">
-                <a class="link-btn project-open" href="#tmpl-cpd" data-target="tmpl-cpd" aria-haspopup="dialog">
-                    Cookeville Police Department Modules Project
-                </a>
+            <div class="project-body">
+                <p>Mini SIEM with a confidence-threshold agentic loop. AWS S3 ingest, Lambda processing, Bedrock/Claude Haiku for automated alert classification. SNS alerting on low-confidence findings.</p>
+                <div class="tag-col">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">LLM</span>
+                </div>
             </div>
-        </section>
-        <section id="FedMultiModal">
-            <div class="FedMultiModal">
-                 <a class="link-btn project-open" href="#tmpl-fedmultimodal" data-target="tmpl-fedmultimodal" aria-haspopup="dialog">
-                    Federated Multimodal Learning with the PTB-XL Dataset Project
-                </a>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-fitness" data-target="tmpl-fitness" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">02</span>
+                <span class="project-title">Fitness Buddy</span>
             </div>
-        </section>
-        <section id="SecureMeshNetworking">
-            <div class="SecureMeshNetworking">
-                 <a class="link-btn project-open" href="#tmpl-securemeshnetworking" data-target="tmpl-securemeshnetworking" aria-haspopup="dialog">
-                    Secure Mesh Networking Project
-                </a>
+            <div class="project-body">
+                <p>Conversational wellness system with hybrid structured/NLP input. Containerized Qwen 2.5 Instruct for personalized health recommendations. Node.js/Express, MariaDB, Docker Compose.</p>
+                <div class="tag-col">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">ML</span>
+                    <span class="tag">Docker</span>
+                </div>
             </div>
-        </section>
-        <section id="EvaluatingEnergyEfficiency">
-            <div class="EvaluatingEnergyEfficiency">
-                 <a class="link-btn project-open" href="#tmpl-evaluatingenergyefficiency" data-target="tmpl-evaluatingenergyefficiency" aria-haspopup="dialog">
-                    Evaluating Energy Efficiency of Different Cryptographic Algorithms in IOT Project
-                </a>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-cpd" data-target="tmpl-cpd" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">03</span>
+                <span class="project-title">Cookeville PD Modules</span>
             </div>
-        </section>
+            <div class="project-body">
+                <p>Three SaaS modules for police department operations via Agile/GitHub Projects. Purchase/Repair Request, Leave Management, and LDAP notification service. Full security assessment included.</p>
+                <div class="tag-col">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Security</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-htb" data-target="tmpl-htb" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">04</span>
+                <span class="project-title">Hack The Box</span>
+            </div>
+            <div class="project-body">
+                <p>Offensive security labs simulating real-world attack paths. Nmap, Burp Suite, Metasploit for enumeration, privilege escalation, and web exploitation across Linux and Windows systems.</p>
+                <div class="tag-col">
+                    <span class="tag">Offensive</span>
+                    <span class="tag">MITRE</span>
+                    <span class="tag">OSINT</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-evaluatingenergyefficiency" data-target="tmpl-evaluatingenergyefficiency" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">05</span>
+                <span class="project-title">Cryptographic Efficiency in IoT</span>
+            </div>
+            <div class="project-body">
+                <p>IEEE-style paper evaluating AES, ECC, ASCON, SPECK, and PRESENT on emulated Z1 motes via Cooja. CPU cycles, power, and throughput benchmarked with Energest profiling.</p>
+                <div class="tag-col">
+                    <span class="tag">Contiki OS</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Crypto</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-securemeshnetworking" data-target="tmpl-securemeshnetworking" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">06</span>
+                <span class="project-title">Secure Mesh Networking</span>
+            </div>
+            <div class="project-body">
+                <p>Technical paper analyzing secure mesh networking architectures, tradeoffs, and threat models for IoT and emergency response. Evaluated security, scalability, and resilience in decentralized designs.</p>
+                <div class="tag-col">
+                    <span class="tag">IoT</span>
+                    <span class="tag">Security</span>
+                    <span class="tag">Networking</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-pba" data-target="tmpl-pba" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">07</span>
+                <span class="project-title">Portobello America Hackathon QC</span>
+            </div>
+            <div class="project-body">
+                <p>CNN-based tile defect detection and PaddleOCR module for factory floor quality control. React frontend, FastAPI backend, Docker deployment on GCP.</p>
+                <div class="tag-col">
+                    <span class="tag">CNN</span>
+                    <span class="tag">OCR</span>
+                    <span class="tag">Docker</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-adversarial" data-target="tmpl-adversarial" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">08</span>
+                <span class="project-title">Adversarial Learning</span>
+            </div>
+            <div class="project-body">
+                <p>Adversarial attack and defense simulations applying MITRE ATLAS/ATT&CK to train students on real-world AI threat modeling and mitigation. FGSM and PGD attacks on MNIST with PyTorch.</p>
+                <div class="tag-col">
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">MITRE</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-securitycatalogue" data-target="tmpl-securitycatalogue" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">09</span>
+                <span class="project-title">Software &amp; Systems Security Catalogue</span>
+            </div>
+            <div class="project-body">
+                <p>Security reviews, vulnerability reports, Windows Active Directory builds, firewall setup, Wireshark analysis, Shijack spoofing, and PKI infrastructure. OWASP Top 10 applied throughout.</p>
+                <div class="tag-col">
+                    <span class="tag">Security</span>
+                    <span class="tag">Windows</span>
+                    <span class="tag">OWASP</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-arm64" data-target="tmpl-arm64" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">10</span>
+                <span class="project-title">ARM64 Operating System</span>
+            </div>
+            <div class="project-body">
+                <p>Core OS components on ARM64: process scheduling, memory management, and low-level system control. Worked directly with hardware-near abstractions and kernel-level logic.</p>
+                <div class="tag-col">
+                    <span class="tag">ARM64</span>
+                    <span class="tag">C</span>
+                    <span class="tag">OS</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-fedmultimodal" data-target="tmpl-fedmultimodal" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">11</span>
+                <span class="project-title">Federated Multimodal Learning</span>
+            </div>
+            <div class="project-body">
+                <p>Federated learning framework for ECG analysis on the PTB-XL dataset. Multimodal data integration with privacy-preserving training across distributed clients.</p>
+                <div class="tag-col">
+                    <span class="tag">Python</span>
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">FL</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-bash" data-target="tmpl-bash" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">12</span>
+                <span class="project-title">Bash Scripting Portfolio</span>
+            </div>
+            <div class="project-body">
+                <p>Automation scripts for student lab validation, one-command environment bootstrapping, and CI-integrated GitHub Actions pipelines for build and container policy checks.</p>
+                <div class="tag-col">
+                    <span class="tag">Bash</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">DevOps</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-ansible" data-target="tmpl-ansible" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">13</span>
+                <span class="project-title">Ansible Scripting Portfolio</span>
+            </div>
+            <div class="project-body">
+                <p>Playbooks to provision and harden Linux lab VMs, enforce SSH configs, and automate multi-node deployments. Reduced environment setup from hours to minutes using idempotent parameterized roles.</p>
+                <div class="tag-col">
+                    <span class="tag">Ansible</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">DevSecOps</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-sysnet" data-target="tmpl-sysnet" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">14</span>
+                <span class="project-title">Systems &amp; Networking Portfolio</span>
+            </div>
+            <div class="project-body">
+                <p>Systems-level programs covering processes, threading, sockets, and file I/O. Networking components using TCP/IP and client–server models. C/C++, Linux, POSIX APIs.</p>
+                <div class="tag-col">
+                    <span class="tag">C/C++</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">TCP/IP</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-x86" data-target="tmpl-x86" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">15</span>
+                <span class="project-title">x86 Assembly Portfolio</span>
+            </div>
+            <div class="project-body">
+                <p>Assembly-level programs exploring CPU architecture, instruction pipelines, memory addressing, and register usage. Maps high-level code to hardware execution using x86 and GNU assembler.</p>
+                <div class="tag-col">
+                    <span class="tag">x86</span>
+                    <span class="tag">Assembly</span>
+                    <span class="tag">Systems</span>
+                </div>
+            </div>
+        </a>
+
+        <a class="project-row project-open" href="#tmpl-dsa" data-target="tmpl-dsa" aria-haspopup="dialog">
+            <div class="project-top">
+                <span class="project-idx">16</span>
+                <span class="project-title">C++ DSA Portfolio</span>
+            </div>
+            <div class="project-body">
+                <p>Core data structures and algorithms with emphasis on performance, memory usage, and correctness. Algorithmic analysis for time and space tradeoffs using C++ and STL.</p>
+                <div class="tag-col">
+                    <span class="tag">C++</span>
+                    <span class="tag">Algorithms</span>
+                    <span class="tag">STL</span>
+                </div>
+            </div>
+        </a>
 
     </main>
-<!-- Modal template and dialog boxes -->
-    <template id="tmpl-adversarial">
+
+<!-- Modal templates -->
+    <template id="tmpl-siem">
         <header>
-            <h2 id="project-modal-title">Adversarial Training Project</h2>
-            <p>
-                Adversarial training is a defensive technique in machine learning where models are trained
-                not only on clean data, but also on adversarially perturbed examples. By exposing the model 
-                to attacks during training, it can build resilience against them. This project demonstrates 
-                implementations using MNIST, FGSM, and PGD attacks.
-            </p>
+            <h2 id="project-modal-title">Agentic Security Triage System (Mini SIEM)</h2>
+            <p>Lightweight agentic AI-powered security triage system combining deterministic rule-based scoring with LLM reasoning to classify and respond to IAM log events. Logs are ingested from AWS S3, processed by Lambda, and classified by Bedrock/Claude Haiku. Low-confidence findings trigger SNS alerts for human review.</p>
             <ul class="bullets">
-                <li>
-                    <u>Technologies Used:</u>  Python, PyTorch, Jupyter Notebook, NumPy, Matplotlib, torchvision (MNIST dataset)
-                </li>
-                <li><u>Goals:</u> Implement adversarial training on MNIST, evaluate robustness against FGSM and PGD attacks, and compare clean vs adversarial accuracy.</li>
-                <li><u>Challenges:</u> Balancing model accuracy with robustness, ensuring stable training with adversarial examples, and tuning attack parameters (epsilon, step size, iterations).</li>
+                <li><u>Technologies:</u> Python, AWS S3, Lambda, Bedrock, Claude Haiku, SNS</li>
+                <li><u>Goals:</u> Automate alert triage with a confidence-threshold agentic loop; reduce analyst fatigue on routine classifications. Modular pipeline analyzes login telemetry with configurable risk scoring and automated threat enrichment via IP reputation checks.</li>
+                <li><u>Challenges:</u> Tuning confidence thresholds to balance false-positive rate against escalation volume; cold-start latency on Lambda.</li>
                 <div class="Github_Link">
-                    <a class="GithubButton" href="https://github.com/sebjinK/AdversarialLearning/tree/main" target="_blank" rel="noopener">
+                    <a class="GithubButton" href="https://github.com/sebjinK" target="_blank" rel="noopener">
                         <div class="GithubProfileWrapper">
-                            <img 
-                                class="pic base"
-                                src="../links/assets/github-mark.png"
-                                alt="Github Logo"
-                            />
-                            <img
-                                class="pic hover"
-                                src="../links/assets/github-mark-white.png"
-                                aria-hidden="true"
-                            />
+                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
+                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
                         </div>
                         github repository
                     </a>
@@ -95,95 +288,65 @@
             </ul>
         </header>
     </template>
+
+    <template id="tmpl-fitness">
+        <header>
+            <h2 id="project-modal-title">Fitness Buddy</h2>
+            <p>Conversational wellness system with hybrid structured/NLP input. Users interact via natural language; a containerized Qwen 2.5 Instruct model generates personalized health recommendations stored in MariaDB. Built automation and test scripts for QA.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Node.js, Express, Qwen 2.5 Instruct, MariaDB, Docker Compose, React</li>
+                <li><u>Goals:</u> Make health tracking feel conversational rather than form-based; run the model fully on-device. Managed full-stack DevOps side using containerization.</li>
+                <li><u>Challenges:</u> Parsing freeform user input reliably; keeping Qwen 2.5 inference fast enough for real-time chat.</li>
+                <div class="Github_Link">
+                    <a class="GithubButton" href="https://github.com/sebjinK/Fitness-Buddy" target="_blank" rel="noopener">
+                        <div class="GithubProfileWrapper">
+                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
+                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
+                        </div>
+                        github repository
+                    </a>
+                </div>
+            </ul>
+        </header>
+    </template>
+
     <template id="tmpl-cpd">
         <header>
-            <h2 id="project-modal-title">Cookeville Police Department Modules Project</h2>
-            <p>
-                This project involved developing specialized software modules for the Cookeville Police Department.
-                The modules were designed to streamline various administrative and operational tasks, enhancing 
-                overall efficiency and effectiveness. Key features included data management, reporting tools, 
-                and user-friendly interfaces tailored to the department's specific needs.
-            </p>
+            <h2 id="project-modal-title">Cookeville Police Department Modules</h2>
+            <p>Partnered with the Cookeville Police Department and IT team as DevOps lead to deliver three new SaaS features through Agile methodology and GitHub Projects. Also conducted a full vulnerability assessment of the production server identifying misconfigurations, outdated dependencies, and XSS/redirect risks.</p>
             <ul class="bullets">
-                <li><u>Technologies Used:</u> JS, Node.js, Express, AWS RDS, AWS EC2, MariaDB, MySQL HTML, CSS, AWS S3, GitHub</li>
-                <li><u>Goals:</u> Develop a comprehensive suite of modules to enhance police operations, improve data accessibility, and facilitate better decision-making.</li>
-                <li><u>Challenges:</u> Ensuring data security and privacy, integrating with existing systems, and providing user-friendly interfaces.</li>
-        </header>
-    </template>
-    <template id="tmpl-fedmultimodal">
-        <header>
-            <h2 id="project-modal-title">Federated Multimodal Learning with the PTB-XL Dataset Project</h2>
-            <p>
-                This project focused on implementing federated multimodal learning techniques using the PTB-XL dataset,
-                which contains a large collection of annotated electrocardiogram (ECG) recordings. The goal was to 
-                develop models that can learn from distributed data sources while preserving data privacy, leveraging 
-                the strengths of multimodal data for improved performance in ECG analysis.
-            </p>
-            <ul class="bullets">
-                <li><u>Technologies Used:</u> Python, TensorFlow, Keras, NumPy, Pandas, Scikit-learn, Fed-Multimodal</li>
-                <li><u>Goals:</u> Develop a federated learning framework for ECG analysis, improve model performance through multimodal data integration, and ensure data privacy during training.</li>
-                <li><u>Challenges:</u> Handling data heterogeneity across clients, optimizing communication efficiency, and maintaining model accuracy with limited data access.</li>
+                <li><u>Technologies:</u> Node.js, Express, SQL, MariaDB, AWS EC2/RDS/S3, GitHub Actions CI/CD, OWASP ZAP, OpenVAS, Nuclei, Nmap, Sslyze, Snyk</li>
+                <li><u>Goals:</u> Purchase/Repair Request module with approve/deny workflows for 45,000+ departmental items. Leave Management System for 200+ employees. LDAP-based notification service for real-time status updates.</li>
+                <li><u>Challenges:</u> Coordinating responsible disclosure; triaging findings by severity across multiple attack surfaces; integrating LDAP with existing infrastructure.</li>
             </ul>
         </header>
     </template>
-    <template id="tmpl-securemeshnetworking">
+
+    <template id="tmpl-htb">
         <header>
-            <h2 id="project-modal-title">Secure Mesh Networking Project</h2>
-            <p>
-                This project involved the design and implementation of a secure mesh networking protocol to enhance
-                communication in decentralized networks. The focus was on ensuring data integrity, confidentiality,
-                and availability through robust encryption methods and fault-tolerant mechanisms. The project aimed to
-                provide a reliable and secure networking solution for various applications, including IoT and emergency
-                response systems.
-            </p>
+            <h2 id="project-modal-title">Hack The Box</h2>
+            <p>Offensive security labs simulating real-world attack paths across Linux and Windows systems. Applied MITRE ATT&CK–aligned techniques and OSINT workflows to chain vulnerabilities, analyze attacker behavior, and document remediation strategies supporting threat detection and incident response.</p>
             <ul class="bullets">
-                <li><u>Goals:</u> Design and test a secure mesh networking protocol for IoT and emergency response systems, ensuring data integrity, confidentiality, and availability while maintaining energy efficiency.</li>
-                <li><u>Challenges:</u> Balancing strong encryption with IoT constraints (low power, memory, CPU), maintaining fault tolerance in decentralized topologies, and evaluating cryptographic trade-offs under realistic conditions.</li>
-                <div class="Github_Link">
-                    <a class="GithubButton" href="https://github.com/sebjinK/Secure-Mesh-Networking" target="_blank" rel="noopener">
-                        <div class="GithubProfileWrapper">
-                            <img 
-                                class="pic base"
-                                src="../links/assets/github-mark.png"
-                                alt="Github Logo"
-                            />
-                            <img
-                                class="pic hover"
-                                src="../links/assets/github-mark-white.png"
-                                aria-hidden="true"
-                            />
-                        </div>
-                        github repository
-                    </a>
-                </div>
+                <li><u>Technologies:</u> Nmap, Burp Suite, Metasploit, MITRE ATT&CK, OSINT tools</li>
+                <li><u>Goals:</u> Conduct enumeration, privilege escalation, and web exploitation in sandboxed environments; build practical offensive/defensive skill parity.</li>
+                <li><u>Challenges:</u> Chaining multi-step attack paths; adapting techniques across diverse OS configurations and hardening levels.</li>
             </ul>
         </header>
     </template>
+
     <template id="tmpl-evaluatingenergyefficiency">
         <header>
-            <h2 id="project-modal-title">Evaluating Energy Efficiency of Different Cryptographic Algorithms in IOT Project</h2>
-            <p>
-                This project aimed to evaluate the energy efficiency of various cryptographic algorithms when implemented
-                in Internet of Things (IoT) devices. Given the resource constraints of IoT hardware, the study focused on measuring power consumption,
-                processing time, and overall performance of algorithms such as AES, RSA, and ECC. The findings provided insights into selecting appropriate cryptographic methods for secure and energy-efficient IoT applications.
-            </p>
+            <h2 id="project-modal-title">Evaluating Energy Efficiency of Cryptographic Algorithms in IoT</h2>
+            <p>IEEE-style paper evaluating the energy performance of multiple encryption algorithms on a simulated IoT environment. Implemented and evaluated cryptographic primitives on emulated Z1 motes via Cooja, analyzing trade-offs between security strength and computational efficiency.</p>
             <ul class="bullets">
-                <li><u>Technologies Used:</u> Contiki OS, Cooja simulator, Z1 mote emulation, Energest profiling, C implementations of lightweight cryptographic algorithms (ASCON, SPECK, PRESENT, TinyAES), Python/Matplotlib for data analysis and visualization</li>
-                <li><u>Goals:</u> Measure and compare CPU cycles, memory usage, power consumption, and throughput of different cryptographic algorithms on resource-constrained IoT devices; identify trade-offs between security strength and energy efficiency for practical IoT deployments.</li>
-                <li><u>Challenges:</u> Implementing and integrating multiple crypto libraries into Contiki, accurately simulating hardware-level performance in Cooja, balancing cryptographic robustness with device limitations, and interpreting results to make security vs efficiency recommendations.</li>
+                <li><u>Technologies:</u> Contiki OS, Cooja simulator, Z1 mote emulation, Energest profiling, C (ASCON, SPECK, PRESENT, TinyAES), Python/Matplotlib</li>
+                <li><u>Goals:</u> Measure and compare CPU cycles, memory usage, power consumption, and throughput of AES, ECC, ASCON, SPECK, and PRESENT; identify security vs. efficiency tradeoffs for practical IoT deployments.</li>
+                <li><u>Challenges:</u> Integrating multiple crypto libraries into Contiki; accurately simulating hardware-level performance in Cooja; interpreting results across different algorithm families.</li>
                 <div class="Github_Link">
                     <a class="GithubButton" href="https://github.com/sebjinK/Cryptographic-Efficiency-Evaluation" target="_blank" rel="noopener">
                         <div class="GithubProfileWrapper">
-                            <img 
-                                class="pic base"
-                                src="../links/assets/github-mark.png"
-                                alt="Github Logo"
-                            />
-                            <img
-                                class="pic hover"
-                                src="../links/assets/github-mark-white.png"
-                                aria-hidden="true"
-                            />
+                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
+                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
                         </div>
                         github repository
                     </a>
@@ -191,6 +354,166 @@
             </ul>
         </header>
     </template>
+
+    <template id="tmpl-securemeshnetworking">
+        <header>
+            <h2 id="project-modal-title">Secure Mesh Networking for IoT and Critical Infrastructure</h2>
+            <p>Technical paper analyzing secure mesh networking architectures, tradeoffs, and threat models. Evaluated security, scalability, and resilience in decentralized network designs for IoT and emergency response applications.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Network security concepts, threat modeling, academic research</li>
+                <li><u>Goals:</u> Design and analyze a secure mesh networking protocol ensuring data integrity, confidentiality, and availability while maintaining energy efficiency under IoT constraints.</li>
+                <li><u>Challenges:</u> Balancing strong encryption with low-power/memory/CPU IoT constraints; maintaining fault tolerance in decentralized topologies; evaluating cryptographic trade-offs under realistic conditions.</li>
+                <div class="Github_Link">
+                    <a class="GithubButton" href="https://github.com/sebjinK/Secure-Mesh-Networking" target="_blank" rel="noopener">
+                        <div class="GithubProfileWrapper">
+                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
+                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
+                        </div>
+                        github repository
+                    </a>
+                </div>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-pba">
+        <header>
+            <h2 id="project-modal-title">Portobello America Hackathon QC</h2>
+            <p>Factory floor quality control system for ceramic tile manufacturing. A CNN detects surface defects and a PaddleOCR module reads lot codes, feeding results into a React dashboard backed by FastAPI. Deployed via Docker on GCP.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Python, PyTorch, PaddleOCR, React, FastAPI, Docker, GCP</li>
+                <li><u>Goals:</u> Real-time defect detection and OCR-based traceability for production line QC.</li>
+                <li><u>Challenges:</u> Training on limited labeled defect data; handling variable lighting conditions on the factory floor.</li>
+                <div class="Github_Link">
+                    <a class="GithubButton" href="https://github.com/sebjinK/QualityControl-PBA" target="_blank" rel="noopener">
+                        <div class="GithubProfileWrapper">
+                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
+                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
+                        </div>
+                        github repository
+                    </a>
+                </div>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-adversarial">
+        <header>
+            <h2 id="project-modal-title">Adversarial Learning</h2>
+            <p>Adversarial attack and defense simulations in Python studying AI model vulnerabilities and resilience. Applied MITRE ATLAS and ATT&CK frameworks to develop lab content training students in analyzing and mitigating real-world adversarial threats. Implemented FGSM and PGD attacks on MNIST with PyTorch.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Python, PyTorch, Jupyter Notebook, NumPy, Matplotlib, torchvision, MITRE ATT&CK, XAI</li>
+                <li><u>Goals:</u> Implement adversarial training on MNIST; evaluate robustness against FGSM and PGD attacks; compare clean vs. adversarial accuracy; build reusable lab materials for classroom use.</li>
+                <li><u>Challenges:</u> Balancing model accuracy with robustness; stable training with adversarial examples; tuning attack parameters (epsilon, step size, iterations).</li>
+                <div class="Github_Link">
+                    <a class="GithubButton" href="https://github.com/sebjinK/AdversarialLearning/tree/main" target="_blank" rel="noopener">
+                        <div class="GithubProfileWrapper">
+                            <img class="pic base" src="../links/assets/github-mark.png" alt="Github Logo" />
+                            <img class="pic hover" src="../links/assets/github-mark-white.png" aria-hidden="true" />
+                        </div>
+                        github repository
+                    </a>
+                </div>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-securitycatalogue">
+        <header>
+            <h2 id="project-modal-title">Software &amp; Systems Security Project Catalogue</h2>
+            <p>Portfolio of applied security work: vulnerability reports, Windows Active Directory builds, firewall configuration, IP deniers, Wireshark packet analysis, Shijack spoofing, and PKI infrastructure. OWASP Top 10 principles applied throughout backend systems.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Burp Suite, Wireshark, Shijack, Windows Server, Active Directory, PKI, OWASP tools</li>
+                <li><u>Goals:</u> Design and secure backend systems by implementing parametric queries, sanitizing file-upload pipelines, hardening authentication flows, and mitigating XSS/redirect vulnerabilities in production code.</li>
+                <li><u>Challenges:</u> Coordinating security reviews across diverse attack surfaces; applying real-world security principles in academic lab environments.</li>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-arm64">
+        <header>
+            <h2 id="project-modal-title">ARM64 Operating System Project</h2>
+            <p>Core OS components implemented on ARM64, including process scheduling, memory management concepts, and low-level system control. Worked directly with hardware-near abstractions and kernel-level logic.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> C, ARM64 assembly, kernel-level APIs</li>
+                <li><u>Goals:</u> Build functional OS primitives from scratch on ARM64; develop deep understanding of how scheduling and memory management interact at the hardware level.</li>
+                <li><u>Challenges:</u> Debugging at the hardware abstraction layer with limited tooling; correctly implementing preemptive scheduling without race conditions.</li>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-fedmultimodal">
+        <header>
+            <h2 id="project-modal-title">Federated Multimodal Learning with the PTB-XL Dataset</h2>
+            <p>Federated learning framework for ECG analysis using the PTB-XL dataset of annotated electrocardiogram recordings. Developed models that learn from distributed data sources while preserving data privacy, leveraging multimodal data for improved ECG analysis performance.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Python, TensorFlow, Keras, NumPy, Pandas, Scikit-learn, Fed-Multimodal</li>
+                <li><u>Goals:</u> Develop a federated learning framework for ECG analysis; improve model performance through multimodal data integration; ensure data privacy during training.</li>
+                <li><u>Challenges:</u> Handling data heterogeneity across clients; optimizing communication efficiency; maintaining model accuracy with limited data access.</li>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-bash">
+        <header>
+            <h2 id="project-modal-title">Bash Scripting Portfolio</h2>
+            <p>Automation scripts developed as DevOps Teaching Assistant: lab submission validators, one-command environment bootstrap scripts, and CI-integrated GitHub Actions pipelines for build automation and container policy checks.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Bash, GitHub Actions, Docker, exit-code pipeline control</li>
+                <li><u>Goals:</u> Validate student lab submissions by checking repository structure, builds, and runtime behavior; standardize development environments; automate container validation and policy checks.</li>
+                <li><u>Challenges:</u> Writing robust scripts that handle edge cases in student submissions; maintaining idempotency across diverse system configurations.</li>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-ansible">
+        <header>
+            <h2 id="project-modal-title">Ansible Scripting Portfolio</h2>
+            <p>Ansible playbooks to provision and harden Linux lab environments for student VMs. Enforced consistent package installs, user permissions, and secure SSH configurations. Idempotent parameterized roles reduced multi-node lab setup from hours to minutes.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> Ansible, Linux, SSH hardening, YAML roles</li>
+                <li><u>Goals:</u> Automate multi-node lab deployments; implement security-focused automation demonstrating DevSecOps principles — least privilege, baseline hardening — within reproducible infrastructure workflows.</li>
+                <li><u>Challenges:</u> Designing truly idempotent roles that work cleanly across VM snapshots with varied starting states.</li>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-sysnet">
+        <header>
+            <h2 id="project-modal-title">Systems &amp; Networking Portfolio</h2>
+            <p>Systems-level programs covering processes, threading, sockets, and file I/O. Networking components built using TCP/IP concepts and client–server models. All implementations in C/C++ on Linux using POSIX APIs.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> C/C++, Linux, POSIX APIs, sockets, TCP/IP</li>
+                <li><u>Goals:</u> Build and analyze programs at the systems level; implement networking components from scratch to understand protocol behavior directly.</li>
+                <li><u>Challenges:</u> Managing concurrency safely with threads; handling partial reads/writes in socket communication.</li>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-x86">
+        <header>
+            <h2 id="project-modal-title">x86 Assembly &amp; Computer Organization Portfolio</h2>
+            <p>Assembly-level programs exploring CPU architecture, instruction pipelines, memory addressing, and register usage. Strengthened understanding of how high-level code maps to hardware execution using x86 and the GNU assembler.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> x86 Assembly, GNU assembler (GAS), GDB</li>
+                <li><u>Goals:</u> Understand CPU-level execution, pipeline stages, and memory addressing directly; bridge the gap between high-level abstractions and machine code.</li>
+                <li><u>Challenges:</u> Debugging at the register level; manually managing the call stack and memory layout without compiler assistance.</li>
+            </ul>
+        </header>
+    </template>
+
+    <template id="tmpl-dsa">
+        <header>
+            <h2 id="project-modal-title">C++ DSA Portfolio</h2>
+            <p>Core data structures and algorithms implemented with emphasis on performance, memory usage, and correctness. Algorithmic analysis applied to evaluate time and space tradeoffs using C++ and the STL.</p>
+            <ul class="bullets">
+                <li><u>Technologies:</u> C++, STL, algorithmic analysis</li>
+                <li><u>Goals:</u> Implement foundational data structures and algorithms from scratch; analyze and compare their practical performance characteristics.</li>
+                <li><u>Challenges:</u> Correctly managing memory ownership and lifetimes in C++; balancing genericity with performance in templated implementations.</li>
+            </ul>
+        </header>
+    </template>
+
     <dialog id="project-modal" aria-labelledby="project-modal-title" aria-modal="true">
         <div class="modal-shell">
             <button class="modal-close" aria-label="Close">×</button>
