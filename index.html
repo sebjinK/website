@@ -574,6 +574,24 @@
     }
   }
 
+  /* ── Skip link ── */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    background: var(--bg-inv);
+    color: var(--bg);
+    padding: 0.5em 1em;
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid var(--bg);
+    white-space: nowrap;
+  }
+  .skip-link:focus { top: 1rem; }
+
   /* ── Responsive ── */
   @media (max-width: 600px) {
     .scroll-nav { right: 0.6rem; gap: 0.9rem; }
@@ -620,42 +638,43 @@
 </head>
 <body>
 
+<a class="skip-link" href="#scroll-main">Skip to main content</a>
 <canvas id="cursor-canvas" aria-hidden="true"></canvas>
 
 <!-- Fixed header -->
 <header class="site-header">
   <div class="header-inner">
-    <div class="logo">Sebjin Kennedy</div>
-    <nav>
+    <div class="logo" aria-label="Sebjin Kennedy – home">Sebjin Kennedy</div>
+    <nav aria-label="Main navigation">
       <a href="#page-about">About</a>
       <a href="#page-projects">Projects</a>
       <a href="#page-experience">Experience</a>
-      <a href="resume/assets/Sebjin_Kennedy.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="resume/assets/Sebjin_Kennedy.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF, opens in new tab)">Resume</a>
     </nav>
   </div>
 </header>
 
 <!-- Sidebar dot navigation -->
 <aside class="scroll-nav" aria-label="Section navigation">
-  <button class="scroll-dot active" data-page="page-hero" data-label="Home"></button>
-  <button class="scroll-dot" data-page="page-about" data-label="About"></button>
-  <button class="scroll-dot" data-page="page-projects" data-label="Projects"></button>
-  <button class="scroll-dot" data-page="page-experience" data-label="Experience"></button>
+  <button class="scroll-dot active" data-page="page-hero" data-label="Home" aria-label="Go to Home section" aria-current="true"></button>
+  <button class="scroll-dot" data-page="page-about" data-label="About" aria-label="Go to About section" aria-current="false"></button>
+  <button class="scroll-dot" data-page="page-projects" data-label="Projects" aria-label="Go to Projects section" aria-current="false"></button>
+  <button class="scroll-dot" data-page="page-experience" data-label="Experience" aria-label="Go to Experience section" aria-current="false"></button>
 </aside>
 
 <!-- Full-page scroll container -->
 <div class="scroll-container" id="scroll-main">
 
   <!-- Hero -->
-  <div class="scroll-page" id="page-hero">
+  <div class="scroll-page" id="page-hero" role="region" aria-label="Hero">
     <div class="site-wrapper">
-      <section class="hero">
-        <h1>Cloud, security, and software engineering.</h1>
+      <section class="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">Cloud, security, and software engineering.</h1>
         <p class="hero-sub">
           CS graduate, Tennessee Tech University. Concentration in Information Assurance &amp; Cybersecurity.
         </p>
         <div class="cert-row">
-          <a href="https://cp.certmetrics.com/comptia/en/public/verify/credential/3aef06482aaf412b820695dac198b366" target="_blank" rel="noopener" class="cert active">Security+</a>
+          <a href="https://cp.certmetrics.com/comptia/en/public/verify/credential/3aef06482aaf412b820695dac198b366" target="_blank" rel="noopener" class="cert active" aria-label="CompTIA Security+ certification – verify credential (opens in new tab)">Security+</a>
           <span class="cert">AWS SA &mdash; in progress</span>
         </div>
       </section>
@@ -663,37 +682,37 @@
   </div>
 
   <!-- About -->
-  <div class="scroll-page" id="page-about">
+  <div class="scroll-page" id="page-about" role="region" aria-label="About">
     <div class="site-wrapper">
-      <section id="about">
+      <section id="about" aria-label="About me">
         <div class="section-bar">
           <span>About</span>
         </div>
         <p class="about-text">
           CS grad from Tennessee Tech. Two years as an
-          <a class="project-open" href="#tmpl-researcher" data-target="tmpl-researcher">AI-Cyber Researcher</a> and
-          <a class="project-open" href="#tmpl-ceroc" data-target="tmpl-ceroc">CEROC Ambassador</a> —
+          <a class="project-open" href="#tmpl-researcher" data-target="tmpl-researcher" aria-haspopup="dialog" aria-label="AI-Cyber Researcher – opens role details">AI-Cyber Researcher</a> and
+          <a class="project-open" href="#tmpl-ceroc" data-target="tmpl-ceroc" aria-haspopup="dialog" aria-label="CEROC Ambassador – opens role details">CEROC Ambassador</a> —
           working at the overlap of adversarial ML, security tooling, and cloud infrastructure.
         </p>
         <p class="about-note">
           This site is where I keep the things I build because I want to, not because I have to —
           a hedge against the
-          <a href="https://en.wikipedia.org/wiki/Overjustification_effect" target="_blank" rel="noopener">Overjustification Effect</a>.
+          <a href="https://en.wikipedia.org/wiki/Overjustification_effect" target="_blank" rel="noopener" aria-label="Overjustification Effect on Wikipedia (opens in new tab)">Overjustification Effect</a>.
         </p>
       </section>
     </div>
   </div>
 
   <!-- Projects -->
-  <div class="scroll-page" id="page-projects">
+  <div class="scroll-page" id="page-projects" role="region" aria-label="Projects">
     <div class="site-wrapper">
-      <section id="projects">
+      <section id="projects" aria-label="Highlight Projects">
         <div class="section-bar">
           <span>Highlight Projects</span>
           <a href="projects/projects.html">View All</a>
         </div>
 
-        <a href="#tmpl-siem" class="project-row project-open" data-target="tmpl-siem" aria-haspopup="dialog">
+        <a href="#tmpl-siem" class="project-row project-open" data-target="tmpl-siem" aria-haspopup="dialog" aria-label="Agentic Security Triage System – opens project details">
           <div class="project-top">
             <span class="project-idx">01</span>
             <span class="project-title">Agentic Security Triage System</span>
@@ -708,7 +727,7 @@
           </div>
         </a>
 
-        <a href="#tmpl-pba" class="project-row project-open" data-target="tmpl-pba" aria-haspopup="dialog">
+        <a href="#tmpl-pba" class="project-row project-open" data-target="tmpl-pba" aria-haspopup="dialog" aria-label="Portobello America Hackathon QC – opens project details">
           <div class="project-top">
             <span class="project-idx">02</span>
             <span class="project-title">Portobello America Hackathon QC</span>
@@ -723,7 +742,7 @@
           </div>
         </a>
 
-        <a href="#tmpl-fitness" class="project-row project-open" data-target="tmpl-fitness" aria-haspopup="dialog">
+        <a href="#tmpl-fitness" class="project-row project-open" data-target="tmpl-fitness" aria-haspopup="dialog" aria-label="Fitness Buddy – opens project details">
           <div class="project-top">
             <span class="project-idx">03</span>
             <span class="project-title">Fitness Buddy</span>
@@ -738,7 +757,7 @@
           </div>
         </a>
 
-        <a href="#tmpl-cpd" class="project-row project-open" data-target="tmpl-cpd" aria-haspopup="dialog">
+        <a href="#tmpl-cpd" class="project-row project-open" data-target="tmpl-cpd" aria-haspopup="dialog" aria-label="Cookeville PD Security Assessment – opens project details">
           <div class="project-top">
             <span class="project-idx">04</span>
             <span class="project-title">Cookeville PD Security Assessment</span>
@@ -757,14 +776,14 @@
   </div>
 
   <!-- Experience -->
-  <div class="scroll-page" id="page-experience">
+  <div class="scroll-page" id="page-experience" role="region" aria-label="Experience">
     <div class="site-wrapper">
-      <section id="experience">
+      <section id="experience" aria-label="Experience">
         <div class="section-bar">
           <span>Experience</span>
         </div>
 
-        <a href="#tmpl-researcher" class="project-row project-open" data-target="tmpl-researcher" aria-haspopup="dialog">
+        <a href="#tmpl-researcher" class="project-row project-open" data-target="tmpl-researcher" aria-haspopup="dialog" aria-label="AI Cyber Researcher – opens role details">
           <div class="project-top">
             <span class="project-idx">01</span>
             <span class="project-title">AI Cyber Researcher</span>
@@ -775,7 +794,7 @@
           </div>
         </a>
 
-        <a href="#tmpl-ceroc" class="project-row project-open" data-target="tmpl-ceroc" aria-haspopup="dialog">
+        <a href="#tmpl-ceroc" class="project-row project-open" data-target="tmpl-ceroc" aria-haspopup="dialog" aria-label="CEROC Ambassador – opens role details">
           <div class="project-top">
             <span class="project-idx">02</span>
             <span class="project-title">CEROC Ambassador</span>
@@ -786,7 +805,7 @@
           </div>
         </a>
 
-        <a href="#tmpl-devops-ta" class="project-row project-open" data-target="tmpl-devops-ta" aria-haspopup="dialog">
+        <a href="#tmpl-devops-ta" class="project-row project-open" data-target="tmpl-devops-ta" aria-haspopup="dialog" aria-label="DevOps Teaching Assistant – opens role details">
           <div class="project-top">
             <span class="project-idx">03</span>
             <span class="project-title">DevOps Teaching Assistant</span>
@@ -803,15 +822,15 @@
 </div><!-- end .scroll-container -->
 
 <!-- Fixed footer -->
-<footer class="site-footer">
+<footer class="site-footer" aria-label="Site footer">
   <div class="footer-inner">
     <span>Sebjin &copy; 2026</span>
-    <div class="footer-links">
-      <a href="mailto:sebjinkennedy@gmail.com">Email</a>
-      <a href="https://github.com/sebjink" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/sebjin-kennedy/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="resume/assets/Sebjin_Kennedy.pdf" target="_blank" rel="noopener">Resume</a>
-    </div>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="mailto:sebjinkennedy@gmail.com" aria-label="Send email to Sebjin Kennedy">Email</a>
+      <a href="https://github.com/sebjink" target="_blank" rel="noopener" aria-label="GitHub profile (opens in new tab)">GitHub</a>
+      <a href="https://www.linkedin.com/in/sebjin-kennedy/" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in new tab)">LinkedIn</a>
+      <a href="resume/assets/Sebjin_Kennedy.pdf" target="_blank" rel="noopener" aria-label="Resume PDF (opens in new tab)">Resume</a>
+    </nav>
     <span>Nashville, TN</span>
   </div>
 </footer>
@@ -945,7 +964,10 @@
   const dots  = Array.from(document.querySelectorAll('.scroll-dot'));
 
   function setActive(idx) {
-    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+      d.setAttribute('aria-current', i === idx ? 'true' : 'false');
+    });
   }
 
   // Dot clicks → scroll to page

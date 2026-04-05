@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <canvas id="cursor-canvas" aria-hidden="true"></canvas>
     <div class="titlename">
         <nav class="title-breadcrumbs" aria-label="Breadcrumb">
@@ -21,12 +22,12 @@
             </ol>
         </nav>
     </div>
-    <main>
+    <main id="main-content" aria-label="All projects">
         <div class="section-bar">
             <span>All Projects</span>
         </div>
 
-        <a class="project-row project-open" href="#tmpl-siem" data-target="tmpl-siem" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-siem" data-target="tmpl-siem" aria-haspopup="dialog" aria-label="Agentic Security Triage System – opens project details">
             <div class="project-top">
                 <span class="project-idx">01</span>
                 <span class="project-title">Agentic Security Triage System</span>
@@ -41,7 +42,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-fitness" data-target="tmpl-fitness" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-fitness" data-target="tmpl-fitness" aria-haspopup="dialog" aria-label="Fitness Buddy – opens project details">
             <div class="project-top">
                 <span class="project-idx">02</span>
                 <span class="project-title">Fitness Buddy</span>
@@ -56,7 +57,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-cpd" data-target="tmpl-cpd" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-cpd" data-target="tmpl-cpd" aria-haspopup="dialog" aria-label="Cookeville PD Modules – opens project details">
             <div class="project-top">
                 <span class="project-idx">03</span>
                 <span class="project-title">Cookeville PD Modules</span>
@@ -71,7 +72,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-htb" data-target="tmpl-htb" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-htb" data-target="tmpl-htb" aria-haspopup="dialog" aria-label="Hack The Box – opens project details">
             <div class="project-top">
                 <span class="project-idx">04</span>
                 <span class="project-title">Hack The Box</span>
@@ -86,7 +87,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-evaluatingenergyefficiency" data-target="tmpl-evaluatingenergyefficiency" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-evaluatingenergyefficiency" data-target="tmpl-evaluatingenergyefficiency" aria-haspopup="dialog" aria-label="Cryptographic Efficiency in IoT – opens project details">
             <div class="project-top">
                 <span class="project-idx">05</span>
                 <span class="project-title">Cryptographic Efficiency in IoT</span>
@@ -101,7 +102,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-securemeshnetworking" data-target="tmpl-securemeshnetworking" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-securemeshnetworking" data-target="tmpl-securemeshnetworking" aria-haspopup="dialog" aria-label="Secure Mesh Networking – opens project details">
             <div class="project-top">
                 <span class="project-idx">06</span>
                 <span class="project-title">Secure Mesh Networking</span>
@@ -116,7 +117,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-pba" data-target="tmpl-pba" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-pba" data-target="tmpl-pba" aria-haspopup="dialog" aria-label="Portobello America Hackathon QC – opens project details">
             <div class="project-top">
                 <span class="project-idx">07</span>
                 <span class="project-title">Portobello America Hackathon QC</span>
@@ -131,7 +132,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-adversarial" data-target="tmpl-adversarial" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-adversarial" data-target="tmpl-adversarial" aria-haspopup="dialog" aria-label="Adversarial Learning – opens project details">
             <div class="project-top">
                 <span class="project-idx">08</span>
                 <span class="project-title">Adversarial Learning</span>
@@ -146,7 +147,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-securitycatalogue" data-target="tmpl-securitycatalogue" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-securitycatalogue" data-target="tmpl-securitycatalogue" aria-haspopup="dialog" aria-label="Software and Systems Security Catalogue – opens project details">
             <div class="project-top">
                 <span class="project-idx">09</span>
                 <span class="project-title">Software &amp; Systems Security Catalogue</span>
@@ -161,7 +162,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-arm64" data-target="tmpl-arm64" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-arm64" data-target="tmpl-arm64" aria-haspopup="dialog" aria-label="ARM64 Operating System – opens project details">
             <div class="project-top">
                 <span class="project-idx">10</span>
                 <span class="project-title">ARM64 Operating System</span>
@@ -176,7 +177,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-fedmultimodal" data-target="tmpl-fedmultimodal" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-fedmultimodal" data-target="tmpl-fedmultimodal" aria-haspopup="dialog" aria-label="Federated Multimodal Learning – opens project details">
             <div class="project-top">
                 <span class="project-idx">11</span>
                 <span class="project-title">Federated Multimodal Learning</span>
@@ -191,7 +192,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-bash" data-target="tmpl-bash" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-bash" data-target="tmpl-bash" aria-haspopup="dialog" aria-label="Bash Scripting Portfolio – opens project details">
             <div class="project-top">
                 <span class="project-idx">12</span>
                 <span class="project-title">Bash Scripting Portfolio</span>
@@ -206,7 +207,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-ansible" data-target="tmpl-ansible" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-ansible" data-target="tmpl-ansible" aria-haspopup="dialog" aria-label="Ansible Scripting Portfolio – opens project details">
             <div class="project-top">
                 <span class="project-idx">13</span>
                 <span class="project-title">Ansible Scripting Portfolio</span>
@@ -221,7 +222,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-sysnet" data-target="tmpl-sysnet" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-sysnet" data-target="tmpl-sysnet" aria-haspopup="dialog" aria-label="Systems and Networking Portfolio – opens project details">
             <div class="project-top">
                 <span class="project-idx">14</span>
                 <span class="project-title">Systems &amp; Networking Portfolio</span>
@@ -236,7 +237,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-x86" data-target="tmpl-x86" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-x86" data-target="tmpl-x86" aria-haspopup="dialog" aria-label="x86 Assembly Portfolio – opens project details">
             <div class="project-top">
                 <span class="project-idx">15</span>
                 <span class="project-title">x86 Assembly Portfolio</span>
@@ -251,7 +252,7 @@
             </div>
         </a>
 
-        <a class="project-row project-open" href="#tmpl-dsa" data-target="tmpl-dsa" aria-haspopup="dialog">
+        <a class="project-row project-open" href="#tmpl-dsa" data-target="tmpl-dsa" aria-haspopup="dialog" aria-label="C++ DSA Portfolio – opens project details">
             <div class="project-top">
                 <span class="project-idx">16</span>
                 <span class="project-title">C++ DSA Portfolio</span>

@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="titlename">
         <nav class="title-breadcrumbs" aria-label="Breadcrumb">
             <ol class="crumbs">
@@ -21,14 +22,14 @@
             </ol>
         </nav>
     </div>
-    <main>
+    <main id="main-content" aria-label="Contact links">
         <p>
         <!-- Email -->
           <a class="link-btn"
             href="#"
             data-copy="sebjinkennedy@gmail.com"
             data-copy-feedback="#emailStatus"
-            title="Click to copy email">
+            aria-label="Click to copy email address sebjinkennedy@gmail.com">
             email: sebjinkennedy@gmail.com
           </a>
           <span id="emailStatus" class="sr-only" aria-live="polite"></span>
@@ -40,7 +41,7 @@
             href="#"
             data-copy="+16158216748"
             data-copy-feedback="#phoneStatus"
-            title="Click to copy phone">
+            aria-label="Click to copy phone number +1 (615) 821-6748">
             phone: +1 (615) 821-6748
           </a>
           <span id="phoneStatus" class="sr-only" aria-live="polite"></span>
@@ -48,7 +49,7 @@
 
 
         <div class="Github_Link">
-            <a class="GithubButton" href="https://github.com/sebjink" target="_blank" rel="noopener">
+            <a class="GithubButton" href="https://github.com/sebjink" target="_blank" rel="noopener" aria-label="GitHub profile (opens in new tab)">
                 <div class="GithubProfileWrapper">
                     <img 
                         class="pic base"
@@ -70,7 +71,7 @@
         </div>
         <!-- add more as needed by duplicating the pattern: -->
         <div class="LinkedinLink">
-            <a class="LinkedinButton" href="https://www.linkedin.com/in/sebjin-kennedy/" target="_blank" rel="noopener">
+            <a class="LinkedinButton" href="https://www.linkedin.com/in/sebjin-kennedy/" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in new tab)">
                 <div class="LinkedinProfileWrapper">
                     <img 
                         class="pic base"
