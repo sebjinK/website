@@ -855,7 +855,9 @@
   <header>
     <h2 id="project-modal-title">Security Lab</h2>
     <p>Designed and deployed a virtualized network infrastructure on Proxmox VE. Built around OPNsense as the core firewall/router with VLAN segmentation, WireGuard VPN for secure remote access, and a full defensive stack covering IDS, encrypted DNS, automated certificates, and threat-intelligence-driven blocklists.</p>
-    <img src="links/assets/homelab_network_topology_v2.png" alt="Homelab network topology diagram" style="max-width:100%;display:block;margin:1rem 0;border:1px solid #111" />
+    <a href="links/assets/homelab_network_topology_v2.png" target="_blank" rel="noopener" aria-label="View full topology diagram (opens in new tab)">
+      <img src="links/assets/homelab_network_topology_v2.png" alt="Homelab network topology diagram" style="width:100%;height:auto;display:block;margin:1rem 0;border:1px solid #111" />
+    </a>
     <ul class="bullets">
       <li><u>Technologies:</u> Proxmox VE, OPNsense, WireGuard, Unbound DNS, Suricata IDS, Let's Encrypt ACME, Cloudflare DNS/DDNS, MaxMind GeoLite2, Hagezi PRO / Abuse.ch ThreatFox / Steven Black blocklists, Debian, Nextcloud</li>
       <li><u>Goals:</u> Suricata IDS in Divert mode with Emerging Threats rulesets for real-time WAN intrusion detection. DNS-over-TLS via Unbound with Cloudflare resolvers to prevent ISP-level inspection. GeoIP-based firewall rules to restrict inbound traffic from high-risk regions. Automated SSL/TLS via ACME DNS-01 challenge for trusted HTTPS on internal services. Recursive DNS resolver with domain-level threat intelligence blocking malware and phishing domains. Self-hosted NAS on Debian with Nextcloud for file synchronization and a media management server for personal library streaming, backed by 8TB local storage, accessible remotely over WireGuard VPN. Ongoing: VLAN-isolated Kali, Ubuntu, and Windows Server lab nodes.</li>
