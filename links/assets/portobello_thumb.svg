@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160">
+  <defs>
+    <marker id="a" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0,6 2.5,0 5" fill="#f5f0eb"/>
+    </marker>
+  </defs>
+
+  <rect width="320" height="160" fill="#111"/>
+
+  <!-- Camera (cream) -->
+  <rect x="8" y="56" width="70" height="48" fill="#f5f0eb" stroke="#111" stroke-width="1"/>
+  <text x="43" y="76" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#111">FACTORY</text>
+  <text x="43" y="88" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#111">CAMERA</text>
+  <text x="43" y="99" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#555">tile feed</text>
+
+  <!-- Fork arrow right, then split -->
+  <line x1="78" y1="80" x2="96" y2="80" stroke="#f5f0eb" stroke-width="1.5"/>
+  <line x1="96" y1="80" x2="96" y2="52" stroke="#f5f0eb" stroke-width="1.5"/>
+  <line x1="96" y1="52" x2="108" y2="52" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="96" y1="80" x2="96" y2="108" stroke="#f5f0eb" stroke-width="1.5"/>
+  <line x1="96" y1="108" x2="108" y2="108" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- CNN (purple) -->
+  <rect x="110" y="34" width="80" height="36" fill="#7000ff" stroke="#7000ff" stroke-width="1"/>
+  <text x="150" y="50" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#fff">CNN</text>
+  <text x="150" y="63" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#ddd">defect detect</text>
+
+  <!-- OCR (dark) -->
+  <rect x="110" y="90" width="80" height="36" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="150" y="106" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#7000ff">PaddleOCR</text>
+  <text x="150" y="119" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#aaa">lot code</text>
+
+  <!-- Merge → FastAPI -->
+  <line x1="190" y1="52" x2="210" y2="52" stroke="#f5f0eb" stroke-width="1.5"/>
+  <line x1="210" y1="52" x2="210" y2="80" stroke="#f5f0eb" stroke-width="1.5"/>
+  <line x1="190" y1="108" x2="210" y2="108" stroke="#f5f0eb" stroke-width="1.5"/>
+  <line x1="210" y1="108" x2="210" y2="80" stroke="#f5f0eb" stroke-width="1.5"/>
+  <line x1="210" y1="80" x2="222" y2="80" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- FastAPI (cream) -->
+  <rect x="224" y="58" width="48" height="44" fill="#f5f0eb" stroke="#111" stroke-width="1"/>
+  <text x="248" y="76" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#111">Fast</text>
+  <text x="248" y="88" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#111">API</text>
+  <text x="248" y="98" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#555">Python</text>
+
+  <!-- Arrow → React -->
+  <line x1="272" y1="80" x2="283" y2="80" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- React (dark) -->
+  <rect x="285" y="58" width="28" height="44" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="299" y="78" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">Re</text>
+  <text x="299" y="90" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">act</text>
+
+  <!-- Labels -->
+  <text x="160" y="14" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" fill="#7000ff" letter-spacing="2">QC PIPELINE</text>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160">
+  <defs>
+    <marker id="a" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0,6 2.5,0 5" fill="#f5f0eb"/>
+    </marker>
+  </defs>
+
+  <rect width="320" height="160" fill="#111"/>
+
+  <!-- Pipeline row -->
+  <!-- LOG INGEST -->
+  <rect x="8" y="30" width="60" height="40" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="38" y="48" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">LOG</text>
+  <text x="38" y="60" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">INGEST</text>
+
+  <line x1="68" y1="50" x2="79" y2="50" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- S3 -->
+  <rect x="81" y="30" width="48" height="40" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="105" y="48" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#7000ff">AWS</text>
+  <text x="105" y="60" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">S3</text>
+
+  <line x1="129" y1="50" x2="140" y2="50" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Lambda -->
+  <rect x="142" y="30" width="48" height="40" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="166" y="48" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#7000ff">AWS</text>
+  <text x="166" y="60" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">λ</text>
+
+  <line x1="190" y1="50" x2="201" y2="50" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Claude Haiku (cream) -->
+  <rect x="203" y="22" width="109" height="56" fill="#f5f0eb" stroke="#111" stroke-width="1"/>
+  <text x="257" y="40" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#555">BEDROCK</text>
+  <text x="257" y="53" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#7000ff">CLAUDE</text>
+  <text x="257" y="66" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#7000ff">HAIKU</text>
+
+  <!-- Arrow down to diamond -->
+  <line x1="257" y1="78" x2="257" y2="92" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Diamond -->
+  <polygon points="257,94 284,112 257,130 230,112" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="257" y="109" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" font-weight="700" fill="#f5f0eb">CONF.</text>
+  <text x="257" y="119" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" font-weight="700" fill="#f5f0eb">THRESH.</text>
+
+  <!-- Left: AUTO-RESOLVED -->
+  <path d="M230,112 H140 V140" fill="none" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="186" y="108" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#aaa">HIGH</text>
+  <rect x="90" y="142" width="100" height="16" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="140" y="153" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" font-weight="700" fill="#f5f0eb">AUTO-RESOLVED</text>
+
+  <!-- Right: ANALYST -->
+  <text x="308" y="108" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#aaa">LOW</text>
+</svg>

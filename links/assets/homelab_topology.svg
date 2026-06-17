@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#f5f0eb"/>
+    </marker>
+    <marker id="arr-dim" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#9933ff"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="780" fill="#111"/>
+
+  <!-- Title -->
+  <text x="600" y="36" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="12" font-weight="700" fill="#9933ff" letter-spacing="4">HOME SECURITY LAB — NETWORK TOPOLOGY</text>
+  <line x1="60" y1="46" x2="1140" y2="46" stroke="#f5f0eb" stroke-width="1.5"/>
+  <text x="600" y="63" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" fill="#aaa" letter-spacing="2">PROXMOX VE · OPNSENSE · WIREGUARD · SURICATA · UNBOUND DNS</text>
+
+  <!-- INTERNET -->
+  <rect x="70" y="74" width="260" height="56" fill="#f5f0eb" stroke="#111" stroke-width="2"/>
+  <text x="200" y="99" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#555" letter-spacing="3">WAN</text>
+  <text x="200" y="116" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="12" font-weight="700" fill="#111">ISP / INTERNET</text>
+
+  <!-- Arrow Internet → Cable Modem -->
+  <line x1="200" y1="130" x2="200" y2="150" stroke="#f5f0eb" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- CABLE MODEM -->
+  <rect x="80" y="152" width="240" height="54" fill="#1e1e1e" stroke="#aaa" stroke-width="2"/>
+  <text x="200" y="175" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa" letter-spacing="2">DOCSIS</text>
+  <text x="200" y="192" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="11" font-weight="700" fill="#f5f0eb">CABLE MODEM</text>
+
+  <!-- Arrow Cable Modem → OPNsense -->
+  <path d="M200,206 L200,246" fill="none" stroke="#f5f0eb" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="215" y="222" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">WAN NIC</text>
+
+  <!-- PROXMOX VE HOST wrapper -->
+  <rect x="60" y="228" width="760" height="262" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="10,5"/>
+  <text x="76" y="246" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#888" letter-spacing="2">PROXMOX VE HOST — Intel I350 NIC + Onboard Mgmt</text>
+
+  <!-- OPNSENSE VM -->
+  <rect x="80" y="252" width="230" height="222" fill="#f5f0eb" stroke="#111" stroke-width="2"/>
+  <text x="195" y="274" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#555" letter-spacing="2">VM · FIREWALL / ROUTER</text>
+  <text x="195" y="291" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="12" font-weight="700" fill="#111">OPNSENSE</text>
+  <line x1="88" y1="297" x2="302" y2="297" stroke="#555" stroke-width="1"/>
+
+  <!-- OPNsense chips — 2 col, font-size 8, letter-spacing 1, height 22 -->
+  <rect x="88" y="302" width="100" height="22" fill="#9933ff"/>
+  <text x="138" y="317" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#fff" letter-spacing="1">ROUTING / FW</text>
+
+  <rect x="196" y="302" width="106" height="22" fill="#333"/>
+  <text x="249" y="317" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#f5f0eb" letter-spacing="1">DHCP SERVER</text>
+
+  <rect x="88" y="330" width="100" height="22" fill="#9933ff"/>
+  <text x="138" y="345" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#fff" letter-spacing="1">SURICATA IDS</text>
+
+  <rect x="196" y="330" width="106" height="22" fill="#333"/>
+  <text x="249" y="345" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#f5f0eb" letter-spacing="1">GEOIP RULES</text>
+
+  <rect x="88" y="358" width="100" height="22" fill="#333"/>
+  <text x="138" y="373" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#f5f0eb" letter-spacing="1">UNBOUND DNS</text>
+
+  <rect x="196" y="358" width="106" height="22" fill="#333"/>
+  <text x="249" y="373" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#f5f0eb" letter-spacing="1">DNS-OVER-TLS</text>
+
+  <rect x="88" y="386" width="100" height="22" fill="#9933ff"/>
+  <text x="138" y="401" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#fff" letter-spacing="1">WIREGUARD VPN</text>
+
+  <rect x="196" y="386" width="106" height="22" fill="#333"/>
+  <text x="249" y="401" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#f5f0eb" letter-spacing="1">LET'S ENCRYPT</text>
+
+  <rect x="88" y="414" width="214" height="22" fill="#333"/>
+  <text x="195" y="429" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#f5f0eb" letter-spacing="1">CLOUDFLARE DDNS</text>
+
+  <text x="195" y="451" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" fill="#555">Emerging Threats · MaxMind GeoLite2</text>
+
+  <!-- SECURITY LAB VMs -->
+  <rect x="330" y="252" width="220" height="222" fill="#1e1e1e" stroke="#aaa" stroke-width="2"/>
+  <text x="440" y="274" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" fill="#9933ff" letter-spacing="3">VMs · ISOLATED</text>
+  <text x="440" y="292" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="12" font-weight="700" fill="#f5f0eb">SECURITY LAB</text>
+  <line x1="338" y1="298" x2="542" y2="298" stroke="#555" stroke-width="1"/>
+
+  <!-- Row 1: Kali Linux -->
+  <rect x="340" y="303" width="200" height="32" fill="#333" stroke="#555" stroke-width="1"/>
+  <text x="440" y="317" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#f5f0eb">Kali Linux</text>
+  <text x="440" y="329" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#9933ff">attacker</text>
+
+  <!-- Row 2: Ubuntu Server -->
+  <rect x="340" y="339" width="200" height="32" fill="#333" stroke="#555" stroke-width="1"/>
+  <text x="440" y="353" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#f5f0eb">Ubuntu Server</text>
+  <text x="440" y="365" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">target</text>
+
+  <!-- Row 3: Windows Server AD -->
+  <rect x="340" y="375" width="200" height="32" fill="#333" stroke="#555" stroke-width="1"/>
+  <text x="440" y="389" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#f5f0eb">Windows Server</text>
+  <text x="440" y="401" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">Active Directory</text>
+
+  <!-- Row 4: Windows VMs -->
+  <rect x="340" y="411" width="200" height="32" fill="#333" stroke="#555" stroke-width="1"/>
+  <text x="440" y="425" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#f5f0eb">Windows VMs</text>
+  <text x="440" y="437" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">clients</text>
+
+  <text x="440" y="459" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">VLAN-segmented · no inter-VLAN routing</text>
+
+  <!-- NAS VM -->
+  <rect x="570" y="252" width="230" height="222" fill="#1e1e1e" stroke="#aaa" stroke-width="2"/>
+  <text x="685" y="274" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" fill="#9933ff" letter-spacing="3">VM · DEBIAN</text>
+  <text x="685" y="292" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="12" font-weight="700" fill="#f5f0eb">NAS</text>
+  <line x1="578" y1="298" x2="792" y2="298" stroke="#555" stroke-width="1"/>
+
+  <!-- Row 1: Nextcloud (cream — highlighted) -->
+  <rect x="580" y="303" width="210" height="32" fill="#f5f0eb" stroke="#111" stroke-width="1"/>
+  <text x="685" y="317" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#111">Nextcloud</text>
+  <text x="685" y="329" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#555">file sync · cloud storage</text>
+
+  <!-- Row 2: Media Server -->
+  <rect x="580" y="339" width="210" height="32" fill="#333" stroke="#555" stroke-width="1"/>
+  <text x="685" y="353" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#f5f0eb">Media Server</text>
+  <text x="685" y="365" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">self-hosted streaming</text>
+
+  <!-- Row 3: Storage -->
+  <rect x="580" y="375" width="210" height="32" fill="#333" stroke="#555" stroke-width="1"/>
+  <text x="685" y="396" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#f5f0eb">8TB Local Storage</text>
+
+  <text x="685" y="424" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">Remote access via WireGuard VPN</text>
+
+  <!-- Arrow OPNsense → LAN -->
+  <path d="M195,474 L195,490 L440,490 L440,502" fill="none" stroke="#f5f0eb" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="155" y="487" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">LAN NIC</text>
+
+  <!-- LAN BUS -->
+  <rect x="60" y="504" width="760" height="48" fill="#1e1e1e" stroke="#aaa" stroke-width="2"/>
+  <text x="440" y="525" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa" letter-spacing="3">NETWORK SEGMENT</text>
+  <text x="440" y="542" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="11" font-weight="700" fill="#f5f0eb">LAN</text>
+
+  <!-- Arrow LAN → TP-Link -->
+  <line x1="440" y1="552" x2="440" y2="572" stroke="#f5f0eb" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- TP-LINK A7 -->
+  <rect x="310" y="574" width="260" height="56" fill="#1e1e1e" stroke="#aaa" stroke-width="2"/>
+  <text x="440" y="597" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa" letter-spacing="2">ACCESS POINT MODE</text>
+  <text x="440" y="614" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="11" font-weight="700" fill="#f5f0eb">TP-LINK A7</text>
+  <text x="440" y="624" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" fill="#aaa">2.4 GHz + 5 GHz</text>
+
+  <!-- Arrows TP-Link → clients -->
+  <path d="M440,630 L440,644 L285,644 L285,656" fill="none" stroke="#f5f0eb" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M440,630 L440,644 L595,644 L595,656" fill="none" stroke="#f5f0eb" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- WIRED CLIENTS -->
+  <rect x="180" y="658" width="210" height="56" fill="#f5f0eb" stroke="#111" stroke-width="2"/>
+  <text x="285" y="681" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#555" letter-spacing="2">WIRED</text>
+  <text x="285" y="697" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="10" font-weight="700" fill="#111">CLIENTS</text>
+  <text x="285" y="707" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" fill="#555">Desktop · Management</text>
+
+  <!-- WIRELESS CLIENTS -->
+  <rect x="490" y="658" width="210" height="56" fill="#1e1e1e" stroke="#aaa" stroke-width="2"/>
+  <text x="595" y="681" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa" letter-spacing="2">WIRELESS</text>
+  <text x="595" y="697" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="10" font-weight="700" fill="#f5f0eb">CLIENTS</text>
+  <text x="595" y="707" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" fill="#aaa">Phones · Laptops · Family</text>
+
+  <!-- REMOTE ACCESS section (right side) -->
+  <rect x="890" y="74" width="250" height="90" fill="#1e1e1e" stroke="#9933ff" stroke-width="2"/>
+  <text x="1015" y="98" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#9933ff" letter-spacing="2">REMOTE ACCESS</text>
+  <text x="1015" y="114" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="10" font-weight="700" fill="#f5f0eb">EXTERNAL CLIENT</text>
+  <text x="1015" y="130" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa">WireGuard tunnel</text>
+  <text x="1015" y="143" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" fill="#aaa">Cloudflare DDNS resolves WAN IP</text>
+
+  <!-- WireGuard VPN path — horizontal at y=374, in the 4px gap between VM rows -->
+  <path d="M1015,164 L1015,374 L312,374" fill="none" stroke="#9933ff" stroke-width="2" stroke-dasharray="8,4" marker-end="url(#arr-dim)"/>
+  <!-- Cream badge behind WIREGUARD / VPN TUNNEL labels -->
+  <rect x="1020" y="265" width="96" height="38" fill="#f5f0eb"/>
+  <text x="1068" y="281" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#9933ff" font-weight="700" letter-spacing="1">WIREGUARD</text>
+  <text x="1068" y="295" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#9933ff" letter-spacing="1">VPN TUNNEL</text>
+  <!-- Cream badge behind "full LAN access" label -->
+  <rect x="840" y="352" width="106" height="16" fill="#f5f0eb"/>
+  <text x="893" y="363" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" fill="#9933ff" font-weight="700">→ full LAN access</text>
+
+  <!-- Footer -->
+  <line x1="60" y1="748" x2="1140" y2="748" stroke="#f5f0eb" stroke-width="1"/>
+  <text x="600" y="765" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" fill="#aaa" letter-spacing="1">Proxmox VE · OPNsense · WireGuard · Suricata · Unbound · Let's Encrypt · Cloudflare · Nextcloud · Debian</text>
+</svg>

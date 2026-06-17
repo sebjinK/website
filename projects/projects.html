@@ -27,17 +27,20 @@
             <span>All Projects</span>
         </div>
 
-        <a class="project-row project-open" href="#tmpl-homelab" data-target="tmpl-homelab" aria-haspopup="dialog" aria-label="Security Lab – opens project details">
+        <a class="project-row project-open" href="#tmpl-homelab" data-target="tmpl-homelab" aria-haspopup="dialog" aria-label="Home Security Lab – opens project details">
             <div class="project-top">
                 <span class="project-idx">01</span>
-                <span class="project-title">Security Lab</span>
+                <span class="project-title">Home Security Lab</span>
             </div>
             <div class="project-body">
                 <p>Virtualized network on Proxmox VE with OPNsense firewall, WireGuard VPN, Suricata IDS, encrypted DNS-over-TLS, automated Let's Encrypt SSL, GeoIP firewall rules, and threat-intelligence blocklists.</p>
-                <div class="tag-col">
-                    <span class="tag">Proxmox</span>
-                    <span class="tag">OPNsense</span>
-                    <span class="tag">Security</span>
+                <div class="project-aside">
+                    <img class="project-thumb" src="../links/assets/homelab_thumb.svg" alt="Home Security Lab topology thumbnail" />
+                    <div class="tag-col">
+                        <span class="tag">Proxmox</span>
+                        <span class="tag">OPNsense</span>
+                        <span class="tag">Security</span>
+                    </div>
                 </div>
             </div>
         </a>
@@ -49,10 +52,13 @@
             </div>
             <div class="project-body">
                 <p>Mini SIEM with a confidence-threshold agentic loop. AWS S3 ingest, Lambda processing, Bedrock/Claude Haiku for automated alert classification. SNS alerting on low-confidence findings.</p>
-                <div class="tag-col">
-                    <span class="tag">AWS</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">LLM</span>
+                <div class="project-aside">
+                    <img class="project-thumb" src="../links/assets/siem_thumb.svg" alt="SIEM pipeline thumbnail" />
+                    <div class="tag-col">
+                        <span class="tag">AWS</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">LLM</span>
+                    </div>
                 </div>
             </div>
         </a>
@@ -64,10 +70,13 @@
             </div>
             <div class="project-body">
                 <p>Conversational wellness system with hybrid structured/NLP input. Containerized Qwen 2.5 Instruct for personalized health recommendations. Node.js/Express, MariaDB, Docker Compose.</p>
-                <div class="tag-col">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">ML</span>
-                    <span class="tag">Docker</span>
+                <div class="project-aside">
+                    <img class="project-thumb" src="../links/assets/fitness_thumb.svg" alt="Fitness Buddy architecture thumbnail" />
+                    <div class="tag-col">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Docker</span>
+                    </div>
                 </div>
             </div>
         </a>
@@ -79,10 +88,13 @@
             </div>
             <div class="project-body">
                 <p>Three SaaS modules for police department operations via Agile/GitHub Projects. Purchase/Repair Request, Leave Management, and LDAP notification service. Full security assessment included.</p>
-                <div class="tag-col">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">AWS</span>
-                    <span class="tag">Security</span>
+                <div class="project-aside">
+                    <img class="project-thumb" src="../links/assets/cpd_thumb.svg" alt="Cookeville PD architecture thumbnail" />
+                    <div class="tag-col">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Security</span>
+                    </div>
                 </div>
             </div>
         </a>
@@ -139,10 +151,13 @@
             </div>
             <div class="project-body">
                 <p>CNN-based tile defect detection and PaddleOCR module for factory floor quality control. React frontend, FastAPI backend, Docker deployment on GCP.</p>
-                <div class="tag-col">
-                    <span class="tag">CNN</span>
-                    <span class="tag">OCR</span>
-                    <span class="tag">Docker</span>
+                <div class="project-aside">
+                    <img class="project-thumb" src="../links/assets/portobello_thumb.svg" alt="Portobello QC pipeline thumbnail" />
+                    <div class="tag-col">
+                        <span class="tag">CNN</span>
+                        <span class="tag">OCR</span>
+                        <span class="tag">Docker</span>
+                    </div>
                 </div>
             </div>
         </a>
@@ -289,6 +304,10 @@
         <header>
             <h2 id="project-modal-title">Agentic Security Triage System</h2>
             <p>Mini SIEM with a confidence-threshold agentic loop. Logs are ingested from AWS S3, processed by Lambda, and classified by Bedrock/Claude Haiku. Low-confidence findings trigger SNS alerts for human review.</p>
+            <a href="../links/assets/siem_architecture.svg" target="_blank" rel="noopener" aria-label="View full architecture diagram (opens in new tab)" style="display:block;margin:1rem 0">
+                <img src="../links/assets/siem_thumb.svg" alt="Agentic SIEM pipeline diagram — click to view full" style="width:100%;height:auto;display:block;border:1px solid #111" />
+                <span style="display:block;text-align:right;font-size:0.65rem;font-family:'Space Mono',monospace;color:#7000ff;margin-top:0.25rem;letter-spacing:0.05em">↗ VIEW FULL DIAGRAM</span>
+            </a>
             <ul class="bullets">
                 <li><u>Technologies:</u> Python, AWS S3, Lambda, Bedrock, Claude Haiku, SNS</li>
                 <li><u>Goals:</u> Automate alert triage with an LLM-backed confidence loop; reduce analyst fatigue on routine classifications.</li>
@@ -310,6 +329,10 @@
         <header>
             <h2 id="project-modal-title">Fitness Buddy</h2>
             <p>Conversational wellness system with hybrid structured/NLP input. Users interact via natural language; a containerized Qwen 2.5 Instruct model generates personalized health recommendations stored in MariaDB. Built automation and test scripts for QA.</p>
+            <a href="../links/assets/fitness_buddy_architecture.svg" target="_blank" rel="noopener" aria-label="View full architecture diagram (opens in new tab)" style="display:block;margin:1rem 0">
+                <img src="../links/assets/fitness_thumb.svg" alt="Fitness Buddy architecture diagram — click to view full" style="width:100%;height:auto;display:block;border:1px solid #111" />
+                <span style="display:block;text-align:right;font-size:0.65rem;font-family:'Space Mono',monospace;color:#7000ff;margin-top:0.25rem;letter-spacing:0.05em">↗ VIEW FULL DIAGRAM</span>
+            </a>
             <ul class="bullets">
                 <li><u>Technologies:</u> Node.js, Express, Qwen 2.5 Instruct, MariaDB, Docker Compose, React</li>
                 <li><u>Goals:</u> Make health tracking feel conversational rather than form-based; run the model fully on-device. Managed full-stack DevOps side using containerization.</li>
@@ -331,6 +354,10 @@
         <header>
             <h2 id="project-modal-title">Cookeville Police Department Modules</h2>
             <p>Partnered with the Cookeville Police Department and IT team as DevOps lead to deliver three new SaaS features through Agile methodology and GitHub Projects. Also conducted a full vulnerability assessment of the production server identifying misconfigurations, outdated dependencies, and XSS/redirect risks.</p>
+            <a href="../links/assets/cookeville_pd_architecture.svg" target="_blank" rel="noopener" aria-label="View full architecture diagram (opens in new tab)" style="display:block;margin:1rem 0">
+                <img src="../links/assets/cpd_thumb.svg" alt="Cookeville PD architecture diagram — click to view full" style="width:100%;height:auto;display:block;border:1px solid #111" />
+                <span style="display:block;text-align:right;font-size:0.65rem;font-family:'Space Mono',monospace;color:#7000ff;margin-top:0.25rem;letter-spacing:0.05em">↗ VIEW FULL DIAGRAM</span>
+            </a>
             <ul class="bullets">
                 <li><u>Technologies:</u> Node.js, Express, SQL, MariaDB, AWS EC2/RDS/S3, GitHub Actions CI/CD, OWASP ZAP, OpenVAS, Nuclei, Nmap, Sslyze, Snyk</li>
                 <li><u>Goals:</u> Purchase/Repair Request module with approve/deny workflows for 45,000+ departmental items. Leave Management System for 200+ employees. LDAP-based notification service for real-time status updates.</li>
@@ -397,6 +424,10 @@
         <header>
             <h2 id="project-modal-title">Portobello America Hackathon QC</h2>
             <p>Factory floor quality control system for ceramic tile manufacturing. A CNN detects surface defects and a PaddleOCR module reads lot codes, feeding results into a React dashboard backed by FastAPI. Deployed via Docker on GCP.</p>
+            <a href="../links/assets/portobello_qc_pipeline.svg" target="_blank" rel="noopener" aria-label="View full pipeline diagram (opens in new tab)" style="display:block;margin:1rem 0">
+                <img src="../links/assets/portobello_thumb.svg" alt="Portobello QC pipeline diagram — click to view full" style="width:100%;height:auto;display:block;border:1px solid #111" />
+                <span style="display:block;text-align:right;font-size:0.65rem;font-family:'Space Mono',monospace;color:#7000ff;margin-top:0.25rem;letter-spacing:0.05em">↗ VIEW FULL DIAGRAM</span>
+            </a>
             <ul class="bullets">
                 <li><u>Technologies:</u> Python, PyTorch, PaddleOCR, React, FastAPI, Docker, GCP</li>
                 <li><u>Goals:</u> Real-time defect detection and OCR-based traceability for production line QC.</li>
@@ -560,10 +591,11 @@
 
     <template id="tmpl-homelab">
         <header>
-            <h2 id="project-modal-title">Security Lab</h2>
+            <h2 id="project-modal-title">Home Security Lab</h2>
             <p>Designed and deployed a virtualized network infrastructure on Proxmox VE. Built around OPNsense as the core firewall/router with VLAN segmentation, WireGuard VPN for secure remote access, and a full defensive stack covering IDS, encrypted DNS, automated certificates, and threat-intelligence-driven blocklists.</p>
-            <a href="../links/assets/homelab_network_topology_v2.png" target="_blank" rel="noopener" aria-label="View full topology diagram (opens in new tab)">
-                <img src="../links/assets/homelab_network_topology_v2.png" alt="Homelab network topology diagram" style="width:100%;height:auto;display:block;margin:1rem 0;border:1px solid #111" />
+            <a href="../links/assets/homelab_topology.svg" target="_blank" rel="noopener" aria-label="View full topology diagram (opens in new tab)" style="display:block;margin:1rem 0">
+                <img src="../links/assets/homelab_thumb.svg" alt="Home Security Lab topology diagram — click to view full" style="width:100%;height:auto;display:block;border:1px solid #111" />
+                <span style="display:block;text-align:right;font-size:0.65rem;font-family:'Space Mono',monospace;color:#7000ff;margin-top:0.25rem;letter-spacing:0.05em">↗ VIEW FULL DIAGRAM</span>
             </a>
             <ul class="bullets">
                 <li><u>Technologies:</u> Proxmox VE, OPNsense, WireGuard, Unbound DNS, Suricata IDS, Let's Encrypt ACME, Cloudflare DNS/DDNS, MaxMind GeoLite2, Hagezi PRO / Abuse.ch ThreatFox / Steven Black blocklists, Debian, Nextcloud</li>

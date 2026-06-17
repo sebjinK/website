@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160">
+  <defs>
+    <marker id="a" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0,6 2.5,0 5" fill="#f5f0eb"/>
+    </marker>
+    <marker id="ap" markerWidth="6" markerHeight="5" refX="5" refY="2.5" orient="auto">
+      <polygon points="0 0,6 2.5,0 5" fill="#7000ff"/>
+    </marker>
+  </defs>
+
+  <rect width="320" height="160" fill="#111"/>
+
+  <!-- WAN -->
+  <rect x="110" y="8" width="100" height="26" fill="#f5f0eb" stroke="#111" stroke-width="1"/>
+  <text x="160" y="22" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="9" font-weight="700" fill="#111">ISP / WAN</text>
+
+  <!-- Arrow WAN → Proxmox -->
+  <line x1="160" y1="34" x2="160" y2="46" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- Proxmox dashed wrapper -->
+  <rect x="20" y="48" width="240" height="64" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="28" y="59" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#888">PROXMOX VE</text>
+
+  <!-- OPNsense chip -->
+  <rect x="28" y="63" width="68" height="38" fill="#f5f0eb" stroke="#111" stroke-width="1"/>
+  <text x="62" y="78" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#7000ff">OPNsense</text>
+  <text x="62" y="91" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#555">FW · VPN · IDS</text>
+
+  <!-- Security Lab chip -->
+  <rect x="102" y="63" width="68" height="38" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="136" y="78" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">Sec. Lab</text>
+  <text x="136" y="91" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#aaa">Kali · Win · AD</text>
+
+  <!-- NAS chip -->
+  <rect x="176" y="63" width="68" height="38" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="210" y="78" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="7" font-weight="700" fill="#f5f0eb">NAS VM</text>
+  <text x="210" y="91" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#aaa">Nextcloud · 8TB</text>
+
+  <!-- Arrow Proxmox → LAN -->
+  <line x1="160" y1="112" x2="160" y2="122" stroke="#f5f0eb" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- LAN + Clients -->
+  <rect x="60" y="124" width="200" height="22" fill="#1e1e1e" stroke="#aaa" stroke-width="1"/>
+  <text x="160" y="138" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="8" font-weight="700" fill="#f5f0eb">LAN · TP-Link A7 · Clients</text>
+
+  <!-- WireGuard label -->
+  <text x="298" y="85" text-anchor="end" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#7000ff">WireGuard</text>
+  <text x="298" y="93" text-anchor="end" font-family="'Space Mono','Courier New',monospace" font-size="6" fill="#7000ff">VPN</text>
+</svg>
