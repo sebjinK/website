@@ -712,9 +712,39 @@
           <a href="projects/projects.html">View All</a>
         </div>
 
-        <a href="#tmpl-siem" class="project-row project-open" data-target="tmpl-siem" aria-haspopup="dialog" aria-label="Agentic Security Triage System – opens project details">
+        <a href="#tmpl-homelab" class="project-row project-open" data-target="tmpl-homelab" aria-haspopup="dialog" aria-label="Security Lab – opens project details">
           <div class="project-top">
             <span class="project-idx">01</span>
+            <span class="project-title">Security Lab</span>
+          </div>
+          <div class="project-body">
+            <p>Virtualized network on Proxmox VE with OPNsense firewall, WireGuard VPN, Suricata IDS, encrypted DNS-over-TLS, automated Let's Encrypt SSL, GeoIP rules, and self-hosted NAS with Nextcloud.</p>
+            <div class="tag-col">
+              <span class="tag">Proxmox</span>
+              <span class="tag">OPNsense</span>
+              <span class="tag">Security</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#tmpl-cpd" class="project-row project-open" data-target="tmpl-cpd" aria-haspopup="dialog" aria-label="Cookeville PD Security Assessment – opens project details">
+          <div class="project-top">
+            <span class="project-idx">02</span>
+            <span class="project-title">Cookeville PD Security Assessment</span>
+          </div>
+          <div class="project-body">
+            <p>SaaS modules for police department operations. Led security risk assessment using OWASP ZAP, OpenVAS, Nuclei, Nmap, Sslyze, and Snyk. AWS RDS/EC2/S3 infrastructure.</p>
+            <div class="tag-col">
+              <span class="tag">DevOps</span>
+              <span class="tag">Security</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#tmpl-siem" class="project-row project-open" data-target="tmpl-siem" aria-haspopup="dialog" aria-label="Agentic Security Triage System – opens project details">
+          <div class="project-top">
+            <span class="project-idx">03</span>
             <span class="project-title">Agentic Security Triage System</span>
           </div>
           <div class="project-body">
@@ -729,7 +759,7 @@
 
         <a href="#tmpl-pba" class="project-row project-open" data-target="tmpl-pba" aria-haspopup="dialog" aria-label="Portobello America Hackathon QC – opens project details">
           <div class="project-top">
-            <span class="project-idx">02</span>
+            <span class="project-idx">04</span>
             <span class="project-title">Portobello America Hackathon QC</span>
           </div>
           <div class="project-body">
@@ -744,7 +774,7 @@
 
         <a href="#tmpl-fitness" class="project-row project-open" data-target="tmpl-fitness" aria-haspopup="dialog" aria-label="Fitness Buddy – opens project details">
           <div class="project-top">
-            <span class="project-idx">03</span>
+            <span class="project-idx">05</span>
             <span class="project-title">Fitness Buddy</span>
           </div>
           <div class="project-body">
@@ -753,21 +783,6 @@
               <span class="tag">Node.js</span>
               <span class="tag">ML</span>
               <span class="tag">Docker</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="#tmpl-cpd" class="project-row project-open" data-target="tmpl-cpd" aria-haspopup="dialog" aria-label="Cookeville PD Security Assessment – opens project details">
-          <div class="project-top">
-            <span class="project-idx">04</span>
-            <span class="project-title">Cookeville PD Security Assessment</span>
-          </div>
-          <div class="project-body">
-            <p>SaaS modules for police department operations. Led security risk assessment using OWASP ZAP, OpenVAS, Nuclei, Nmap, Sslyze, and Snyk. AWS RDS/EC2/S3 infrastructure.</p>
-            <div class="tag-col">
-              <span class="tag">DevOps</span>
-              <span class="tag">Security</span>
-              <span class="tag">AWS</span>
             </div>
           </div>
         </a>
@@ -836,6 +851,19 @@
 </footer>
 
 <!-- ── Templates ── -->
+<template id="tmpl-homelab">
+  <header>
+    <h2 id="project-modal-title">Security Lab</h2>
+    <p>Designed and deployed a virtualized network infrastructure on Proxmox VE. Built around OPNsense as the core firewall/router with VLAN segmentation, WireGuard VPN for secure remote access, and a full defensive stack covering IDS, encrypted DNS, automated certificates, and threat-intelligence-driven blocklists.</p>
+    <img src="links/assets/homelab_network_topology_v2.png" alt="Homelab network topology diagram" style="max-width:100%;display:block;margin:1rem 0;border:1px solid #111" />
+    <ul class="bullets">
+      <li><u>Technologies:</u> Proxmox VE, OPNsense, WireGuard, Unbound DNS, Suricata IDS, Let's Encrypt ACME, Cloudflare DNS/DDNS, MaxMind GeoLite2, Hagezi PRO / Abuse.ch ThreatFox / Steven Black blocklists, Debian, Nextcloud</li>
+      <li><u>Goals:</u> Suricata IDS in Divert mode with Emerging Threats rulesets for real-time WAN intrusion detection. DNS-over-TLS via Unbound with Cloudflare resolvers to prevent ISP-level inspection. GeoIP-based firewall rules to restrict inbound traffic from high-risk regions. Automated SSL/TLS via ACME DNS-01 challenge for trusted HTTPS on internal services. Recursive DNS resolver with domain-level threat intelligence blocking malware and phishing domains. Self-hosted NAS on Debian with Nextcloud for file synchronization and a media management server for personal library streaming, backed by 8TB local storage, accessible remotely over WireGuard VPN. Ongoing: VLAN-isolated Kali, Ubuntu, and Windows Server lab nodes.</li>
+      <li><u>Challenges:</u> Coordinating DDNS and ACME renewal across dynamic IPs; tuning Suricata rulesets to minimize false positives on home traffic; maintaining DNS blocklist coverage without breaking legitimate services.</li>
+    </ul>
+  </header>
+</template>
+
 <template id="tmpl-siem">
   <header>
     <h2 id="project-modal-title">Agentic Security Triage System</h2>
