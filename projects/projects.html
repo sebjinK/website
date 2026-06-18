@@ -33,7 +33,7 @@
                 <span class="project-title">Home Security Lab</span>
             </div>
             <div class="project-body">
-                <p>Virtualized network on Proxmox VE with OPNsense firewall, WireGuard VPN, Suricata IDS, encrypted DNS-over-TLS, automated Let's Encrypt SSL, GeoIP firewall rules, and threat-intelligence blocklists.</p>
+                <p>Built and hardened a full network on Proxmox VE — OPNsense firewall, Suricata IDS, WireGuard VPN, encrypted DNS — then validated it by attacking a VLAN-isolated Active Directory domain.</p>
                 <div class="project-aside">
                     <img class="project-thumb" src="../links/assets/homelab_thumb.svg" alt="Home Security Lab topology thumbnail" />
                     <div class="tag-col">
@@ -592,15 +592,17 @@
     <template id="tmpl-homelab">
         <header>
             <h2 id="project-modal-title">Home Security Lab</h2>
-            <p>Designed and deployed a virtualized network infrastructure on Proxmox VE. Built around OPNsense as the core firewall/router with VLAN segmentation, WireGuard VPN for secure remote access, and a full defensive stack covering IDS, encrypted DNS, automated certificates, and threat-intelligence-driven blocklists.</p>
+            <p>Built and secured a full network infrastructure from scratch on Proxmox VE, then validated it by attacking it — combining defensive hardening (firewall, IDS, encrypted DNS, VPN) with offensive testing against a VLAN-isolated Active Directory domain.</p>
             <a href="../links/assets/homelab_topology.svg" target="_blank" rel="noopener" aria-label="View full topology diagram (opens in new tab)" style="display:block;margin:1rem 0">
                 <img src="../links/assets/homelab_thumb.svg" alt="Home Security Lab topology diagram — click to view full" style="width:100%;height:auto;display:block;border:1px solid #111" />
                 <span style="display:block;text-align:right;font-size:0.65rem;font-family:'Space Mono',monospace;color:#7000ff;margin-top:0.25rem;letter-spacing:0.05em">↗ VIEW FULL DIAGRAM</span>
             </a>
             <ul class="bullets">
-                <li><u>Technologies:</u> Proxmox VE, OPNsense, WireGuard, Unbound DNS, Suricata IDS, Let's Encrypt ACME, Cloudflare DNS/DDNS, MaxMind GeoLite2, Hagezi PRO / Abuse.ch ThreatFox / Steven Black blocklists, Debian, Nextcloud</li>
-                <li><u>Goals:</u> Suricata IDS in Divert mode with Emerging Threats rulesets for real-time WAN intrusion detection. DNS-over-TLS via Unbound with Cloudflare resolvers to prevent ISP-level inspection. GeoIP-based firewall rules to restrict inbound traffic from high-risk regions. Automated SSL/TLS via ACME DNS-01 challenge for trusted HTTPS on internal services. Recursive DNS resolver with domain-level threat intelligence blocking malware and phishing domains. Self-hosted NAS on Debian with Nextcloud for file synchronization and a media management server for personal library streaming, backed by 8TB local storage, accessible remotely over WireGuard VPN. Ongoing: VLAN-isolated Kali, Ubuntu, and Windows Server lab nodes.</li>
-                <li><u>Challenges:</u> Coordinating DDNS and ACME renewal across dynamic IPs; tuning Suricata rulesets to minimize false positives on home traffic; maintaining DNS blocklist coverage without breaking legitimate services.</li>
+                <li>Architected a virtualized network on Proxmox VE, replacing a consumer router bottleneck with an OPNsense firewall using dual-NIC PCI passthrough to restore full gigabit throughput, and resolved resulting management-network isolation issues through bridge and static route reconfiguration.</li>
+                <li>Hardened network-wide traffic inspection using Unbound DNS with curated blocklists (Hagezi, AdGuard, ThreatFox) and DNS-over-TLS, paired with a Suricata IDS in inline (divert) mode running Emerging Threats rulesets and MaxMind GeoIP-based geographic blocking.</li>
+                <li>Deployed and debugged a WireGuard VPN on OPNsense, resolving a listen-port misconfiguration and a CGNAT connectivity failure, with Cloudflare Dynamic DNS for stable remote access and automated Let's Encrypt ACME (DNS-01) certificate issuance across self-hosted services.</li>
+                <li>Self-hosted a Debian/Docker NAS with 8TB of passthrough storage running Nextcloud and a media server behind a Caddy reverse proxy with per-subdomain TLS, resolving DNS rebinding and hairpin routing conflicts for consistent internal and external access.</li>
+                <li>Built a VLAN-segmented penetration testing environment isolated from production traffic, using Kali Linux to attack a Windows Server Active Directory domain (enumeration, BloodHound path mapping, Impacket/Mimikatz credential attacks) per HTB CPTS methodology.</li>
             </ul>
         </header>
     </template>
