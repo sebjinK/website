@@ -894,11 +894,19 @@
       <span style="display:block;text-align:right;font-size:0.65rem;font-family:'Space Mono',monospace;color:#7000ff;margin-top:0.25rem;letter-spacing:0.05em">↗ VIEW FULL DIAGRAM</span>
     </a>
     <ul class="bullets">
+      <li>To validate the environment rather than trust it, I constructed SECLAB — a VLAN-isolated multi-server Active Directory domain spanning Windows Server, several Windows 10 clients, and an Ubuntu Server. Using a dedicated Kali attacker VM, I conducted a series of penetration tests against SECLAB targeting specific, real-world vulnerabilities:
+        <ul>
+          <li>CVE-2022-26923 — domain privilege escalation via AD Certificate Services template misconfiguration</li>
+          <li>CVE-2025-21293 — privilege escalation via an AD Domain Services network-based access control flaw</li>
+          <li>noPac (CVE-2021-42278 / CVE-2021-42287) — sAMAccountName spoofing to impersonate a domain controller</li>
+          <li>Kerberoasting — cracking service account credentials offline after requesting service tickets</li>
+          <li>DCSync — extracting domain credentials directly by impersonating a domain controller's replication rights</li>
+        </ul>
+      </li>
       <li>Architected a virtualized network on Proxmox VE, replacing a consumer router bottleneck with an OPNsense firewall using dual-NIC PCI passthrough to restore full gigabit throughput, and resolved resulting management-network isolation issues through bridge and static route reconfiguration.</li>
       <li>Hardened network-wide traffic inspection using Unbound DNS with curated blocklists (Hagezi, AdGuard, ThreatFox) and DNS-over-TLS, paired with a Suricata IDS in inline (divert) mode running Emerging Threats rulesets and MaxMind GeoIP-based geographic blocking.</li>
       <li>Deployed and debugged a WireGuard VPN on OPNsense, resolving a listen-port misconfiguration and a CGNAT connectivity failure, with Cloudflare Dynamic DNS for stable remote access and automated Let's Encrypt ACME (DNS-01) certificate issuance across self-hosted services.</li>
       <li>Self-hosted a Debian/Docker NAS with 8TB of passthrough storage running Nextcloud and a media server behind a Caddy reverse proxy with per-subdomain TLS, resolving DNS rebinding and hairpin routing conflicts for consistent internal and external access.</li>
-      <li>Built a VLAN-segmented penetration testing environment isolated from production traffic, using Kali Linux to attack a Windows Server Active Directory domain (enumeration, BloodHound path mapping, Impacket/Mimikatz credential attacks) per HTB CPTS methodology.</li>
       <li>Built a Power BI dashboard analyzing firewall traffic across a VLAN-segmented homelab network, using Power Query to parse and transform raw OPNsense log data into visualizations of blocked/allowed connections, top traffic sources, and protocol distribution.</li>
     </ul>
   </header>
